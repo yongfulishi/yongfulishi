@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>永福历史教研工作室</title>
+<style>
+:root{
+  --teal-dark:#085041; --teal:#0F6E56; --teal-mid:#1D9E75; --teal-light:#5DCAA5; --teal-bg:#E1F5EE;
+  --amber:#BA7517; --amber-light:#EF9F27; --amber-bg:#FAEEDA;
+  --ink:#2C2C2A; --muted:#6B6A65; --line:#E8E7E1; --bg:#FAF9F6; --white:#FFF;
+  --serif:'Noto Serif SC','SimSun','宋体',serif; --sans:'Noto Sans SC','Microsoft YaHei','微软雅黑',sans-serif;
+  --mifei:'MiFeiTi','Noto Serif SC','SimSun','宋体',serif;
+  --maxw:1160px;
+}
+@font-face{
+  font-family:'MiFeiTi';
+  src:url('fonts/mifei.woff2') format('woff2');
+  font-display:swap;
+}
+@font-face{
+  font-family:'QiTi';
+  src:url('fonts/qiti.woff2') format('woff2');
+  font-display:swap;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.75;font-size:15px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ===== MAIN CONTENT (no left sidebar) ===== */
+/* (团队风采已移至Tab区内左侧) */
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.94);backdrop-filter:blur(10px);border-bottom:0.5px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:8px}
+.logo{display:inline-flex;align-items:center;gap:7px;font-family:var(--mifei);font-size:18px;color:var(--teal-dark);font-weight:400;white-space:nowrap}
+.logo:hover{color:var(--teal)}
+.logo-mark{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:var(--teal);color:#fff;font-family:var(--serif);font-size:15px;font-weight:700;flex-shrink:0}
+.nav-links{display:flex;gap:14px;align-items:center}
+.nav-links a{font-size:13.5px;color:var(--muted);font-weight:500;cursor:pointer;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--teal);color:#fff !important;padding:7px 16px;border-radius:8px;font-size:13px}
+.nav-cta:hover{background:var(--teal-dark)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.burger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
+
+/* ===== SEARCH ===== */
+.nav-search{display:flex;align-items:center;gap:0;margin-left:auto;flex-shrink:0}
+.search-input{width:180px;padding:0 12px;border:0.5px solid var(--line);background:var(--bg);font-size:13px;color:var(--ink);border-radius:8px 0 0 8px;outline:none;height:34px;font-family:var(--sans)}
+.search-btn{width:34px;height:34px;border-radius:0 8px 8px 0;border:none;background:var(--teal);color:#fff;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s}
+.search-btn:hover{background:var(--teal-dark)}
+
+/* ===== HERO BANNER (深绿色大横幅) ===== */
+.hero{margin-top:60px;background:linear-gradient(135deg,#0A4033,#0F6E56,#0D7B5E);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-40%;right:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.06),transparent 60%);pointer-events:none}
+.hero::after{content:"";position:absolute;bottom:-30%;left:-5%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.04),transparent 60%);pointer-events:none}
+.hero-inner{max-width:var(--maxw);margin:0 auto;padding:44px 24px 40px;display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:center;position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:rgba(255,255,255,.82);margin-bottom:16px}
+.hero-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber-light)}
+.hero-title{font-family:var(--mifei);font-size:42px;line-height:1.35;margin-bottom:14px;font-weight:400}
+.hero-title .hl{color:var(--amber-light)}
+.hero-sub{font-size:15px;color:rgba(255,255,255,.82);line-height:1.75;margin-bottom:26px;max-width:480px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-btn{padding:11px 24px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:.25s;display:inline-flex;align-items:center;gap:6px;border:none}
+.hero-btn.primary{background:var(--amber);color:#fff}
+.hero-btn.primary:hover{background:var(--amber-light);transform:translateY(-2px)}
+.hero-btn.outline{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.hero-btn.outline:hover{background:rgba(255,255,255,.18)}
+
+/* 右侧卡片区 */
+.hero-right{display:flex;flex-direction:column;gap:14px}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;background:rgba(255,255,255,.09);border:0.5px solid rgba(255,255,255,.14);border-radius:14px;padding:20px 18px;backdrop-filter:blur(6px)}
+.stat{text-align:center}
+.stat-num{font-family:var(--serif);font-size:28px;font-weight:700;color:#fff;line-height:1.2}
+.stat-num small{font-size:13px;font-weight:400;color:var(--amber-light);margin-left:2px}
+.stat-lbl{font-size:11.5px;color:rgba(255,255,255,.65);margin-top:3px}
+.host-card{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.09);border:0.5px solid rgba(255,255,255,.14);border-radius:14px;padding:16px 18px;backdrop-filter:blur(6px)}
+.host-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--amber-bg);box-shadow:0 1px 6px rgba(0,0,0,.1)}
+.host-info .host-role{font-size:11.5px;color:rgba(255,255,255,.6);margin-bottom:2px}
+.host-info .host-name{font-size:17px;font-weight:600}
+.host-info .host-unit{font-size:12px;color:var(--amber-light);margin-top:2px}
+
+/* ===== CAROUSEL (滚动轮播，在Hero下方) ===== */
+.carousel-wrap{background:var(--bg);padding:0 0 8px}
+.carousel{position:relative;overflow:hidden;height:auto;min-height:380px;max-width:var(--maxw);margin:0 auto}
+.carousel-track{display:flex}
+.slide{min-width:100%;display:flex;align-items:center;justify-content:center;position:relative;background:#f5f4ef;border-radius:12px;overflow:hidden}
+/* 实际图片，完整显示 */
+.slide-img{width:100%;height:auto;max-height:420px;object-fit:contain;display:block;border-radius:12px}
+/* 文字说明层 */
+.slide-content{position:absolute;bottom:0;left:0;right:0;text-align:center;color:#fff;padding:16px 24px;background:linear-gradient(transparent,rgba(8,80,65,.75));z-index:2;border-radius:0 0 12px 12px}
+.slide-content .tag{display:inline-block;font-size:11.5px;background:rgba(255,255,255,.18);border:0.5px solid rgba(255,255,255,.28);padding:3px 13px;border-radius:16px;margin-bottom:6px;letter-spacing:1px}
+.slide-content h2{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.35;text-shadow:0 2px 10px rgba(0,0,0,.3)}
+.slide-content p{font-size:12.5px;opacity:.9;line-height:1.7;text-shadow:0 1px 5px rgba(0,0,0,.25)}
+.carousel-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:3}
+.carousel-dots span{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:.3s}
+.carousel-dots span.active{background:#fff;width:22px;border-radius:4px}
+.carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:0.5px solid rgba(255,255,255,.3);color:#fff;font-size:17px;cursor:pointer;z-index:3;display:flex;align-items:center;justify-content:center;transition:.25s;opacity:0}
+.carousel:hover .carousel-arrow{opacity:1}
+.carousel-arrow:hover{background:rgba(255,255,255,.32)}
+.carousel-arrow.prev{left:14px}
+.carousel-arrow.next{right:14px}
+
+/* ===== BRIEF + NOTICE ===== */
+.info-bar{background:var(--white);border-bottom:0.5px solid var(--line)}
+.info-inner{max-width:var(--maxw);margin:0 auto;padding:20px 24px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:stretch}
+.brief-box{display:flex;gap:14px;align-items:flex-start}
+.brief-tag{font-family:var(--serif);font-size:13px;color:var(--teal);letter-spacing:1.5px;padding:5px 14px;background:var(--teal-bg);border-radius:14px;white-space:nowrap;flex-shrink:0;margin-top:1px;font-weight:600}
+.brief-text{font-size:14px;color:var(--muted);line-height:1.8;position:relative;max-height:130px;overflow:hidden;transition:max-height .4s ease}
+.brief-text strong{color:var(--ink);font-weight:500}
+.brief-text::after{content:'';position:absolute;bottom:0;left:0;right:0;height:50px;background:linear-gradient(transparent,var(--white));transition:opacity .3s;pointer-events:none}
+.brief-text.expanded{max-height:1000px}
+.brief-text.expanded::after{opacity:0}
+.brief-toggle{margin-top:8px;font-size:13px;color:var(--teal);cursor:pointer;display:inline-flex;align-items:center;gap:4px;font-weight:500;transition:color .2s;background:none;border:none;padding:0}
+.brief-toggle:hover{color:var(--teal-dark)}
+.brief-toggle svg{width:14px;height:14px;transition:transform .3s}
+.brief-text.expanded + .brief-toggle svg,.brief-text.expanded ~ .brief-toggle svg{transform:rotate(180deg)}
+.notice-box{border:0.5px solid var(--line);border-radius:10px;overflow:hidden}
+.notice-head{background:var(--teal-bg);padding:8px 14px;display:flex;justify-content:space-between;align-items:center}
+.notice-head .nt{font-size:13px;font-weight:600;color:var(--teal);display:flex;align-items:center;gap:6px}
+.notice-head .nt::before{content:"📢";font-size:14px}
+.notice-head .more{font-size:12px;color:var(--muted);cursor:pointer}
+.notice-head .more:hover{color:var(--teal)}
+.notice-list{padding:6px 14px}
+.notice-list .ni{display:flex;align-items:center;gap:8px;padding:5px 0;font-size:12.5px;border-bottom:0.5px dashed var(--line);cursor:pointer;transition:color .2s}
+.notice-list .ni:last-child{border-bottom:none}
+.notice-list .ni:hover{color:var(--teal)}
+.notice-list .ni .ndate{color:var(--muted);font-size:11.5px;white-space:nowrap;flex-shrink:0}
+.notice-list .ni .ntitle{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ===== TAB SECTION ===== */
+.tabs-section{padding:24px 0 56px;max-width:var(--maxw);margin:0 auto}
+.tabs-section .wrap{padding:0}
+.tab-layout{display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:start}
+/* 团队风采 - Tab区内左侧面板 */
+.team-panel{background:var(--white);border:0.5px solid var(--line);border-radius:14px;overflow:hidden;position:sticky;top:84px}
+.team-panel-head{background:linear-gradient(135deg,#0A4033,#0F6E56);color:#fff;padding:18px 16px 14px;text-align:center}
+.team-panel-head .tp-title{font-family:'QiTi','Noto Serif SC','SimSun','宋体',serif;font-size:17px;font-weight:600;margin-bottom:2px}
+.team-panel-head .tp-sub{font-size:10.5px;opacity:.65;letter-spacing:.5px}
+.team-panel-body{padding:12px 10px 14px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tp-member{background:var(--bg);border-radius:11px;padding:12px 6px;text-align:center;border:0.5px solid var(--line);transition:.22s;cursor:default}
+.tp-member:hover{border-color:var(--teal-light);box-shadow:0 3px 12px rgba(8,80,65,.06)}
+.tp-member.lead{grid-column:1 / -1;border-color:rgba(239,159,39,.35);background:var(--amber-bg)}
+.tp-avatar{width:42px;height:42px;border-radius:50%;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-weight:600;color:#fff;overflow:hidden}
+.tp-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.tp-avatar.a1{background:linear-gradient(135deg,var(--amber-light),#F5C563)}
+.tp-avatar.a2{background:linear-gradient(135deg,var(--teal-light),var(--teal-mid))}
+.tp-avatar.a3{background:linear-gradient(135deg,#5FA8E8,#7BBBF0)}
+.tp-avatar.a4{background:linear-gradient(135deg,#D4537E,#E87B9E)}
+.tp-avatar.a5{background:linear-gradient(135deg,#639922,#7DB83A)}
+.tp-avatar.a6{background:linear-gradient(135deg,#6B5BFF,#8B7DE8)}
+.tp-name{font-weight:600;font-size:12.5px}
+.tp-role{font-size:10.5px;color:var(--muted);margin-top:1px}
+.tp-member.lead .tp-role{color:var(--amber)}
+.tp-lead-tag{display:inline-block;font-size:9px;background:rgba(239,159,39,.18);color:var(--amber);padding:1px 6px;border-radius:7px;font-weight:500;margin-top:2px}
+.team-panel-foot{padding:10px 12px;text-align:center;font-size:10px;color:var(--muted);line-height:1.5;border-top:0.5px solid var(--line)}
+.tab-nav{display:flex;gap:0;border-bottom:0.5px solid var(--line);margin-bottom:24px;position:sticky;top:60px;background:var(--bg);z-index:20;padding-top:6px;overflow-x:auto;flex-wrap:nowrap;scroll-margin-top:70px}
+.tab-nav::-webkit-scrollbar{height:0}
+.tab-btn{padding:10px 18px;font-size:14px;font-weight:500;color:var(--muted);cursor:pointer;border:none;background:none;border-bottom:2.5px solid transparent;transition:.22s;font-family:var(--sans);white-space:nowrap;position:relative;top:0.5px}
+.tab-btn:hover{color:var(--teal)}
+.tab-btn.active{color:var(--teal);border-bottom-color:var(--teal)}
+.tab-btn .cnt{font-size:11px;color:var(--muted);background:var(--line);padding:1px 6px;border-radius:8px;margin-left:4px;font-weight:400}
+.tab-btn.active .cnt{background:var(--teal-bg);color:var(--teal)}
+.tab-pane{display:none;animation:fadeUp .4s ease}
+.tab-pane.active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ===== NEWS ===== */
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.news-card{background:var(--white);border:0.5px solid var(--line);border-radius:12px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.news-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(8,80,65,.1);border-color:transparent}
+.news-banner{height:4px}
+.news-card:nth-child(4n+1) .news-banner{background:linear-gradient(90deg,var(--teal-mid),var(--teal-light))}
+.news-card:nth-child(4n+2) .news-banner{background:linear-gradient(90deg,var(--amber),var(--amber-light))}
+.news-card:nth-child(4n+3) .news-banner{background:linear-gradient(90deg,#378ADD,#5FA8E8)}
+.news-card:nth-child(4n) .news-banner{background:linear-gradient(90deg,#993556,#D4537E)}
+.news-body{padding:16px 16px 18px;flex:1;display:flex;flex-direction:column}
+.news-date{font-size:11.5px;color:var(--muted);margin-bottom:7px;display:flex;align-items:center;gap:7px}
+.news-date .chip{background:var(--teal-bg);color:var(--teal);padding:2px 8px;border-radius:8px;font-size:10.5px;font-weight:500}
+.news-card:nth-child(4n+2) .news-date .chip{background:var(--amber-bg);color:var(--amber)}
+.news-card:nth-child(4n+3) .news-date .chip{background:#E6F1FB;color:#185FA5}
+.news-card:nth-child(4n) .news-date .chip{background:#FBEAF0;color:#993556}
+.news-title{font-weight:600;font-size:14.5px;line-height:1.5;margin-bottom:7px;flex:1}
+.news-excerpt{font-size:12.5px;color:var(--muted);line-height:1.7}
+
+/* ===== NOTICE full pane ===== */
+.notice-full-list{display:flex;flex-direction:column;gap:0}
+.nf-item{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:0.5px solid var(--line);transition:.2s;cursor:pointer}
+.nf-item:hover{padding-left:8px}
+.nf-item:last-child{border-bottom:none}
+.nf-tag{font-size:11.5px;padding:3px 10px;border-radius:8px;font-weight:500;white-space:nowrap}
+.nf-tag.t-notice{background:var(--amber-bg);color:var(--amber)}
+.nf-tag.t-activity{background:var(--teal-bg);color:var(--teal)}
+.nf-tag.t-train{background:#E6F1FB;color:#185FA5}
+.nf-info .nft{font-size:14.5px;font-weight:500;margin-bottom:2px}
+.nf-info .nfd{font-size:12.5px;color:var(--muted)}
+.nf-date{font-size:12.5px;color:var(--muted);white-space:nowrap}
+
+/* ===== RESOURCES ===== */
+.res-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.filter-btn{padding:6px 16px;border-radius:18px;border:0.5px solid var(--line);background:var(--white);font-size:13px;color:var(--muted);cursor:pointer;transition:.2s;font-family:var(--sans)}
+.filter-btn.active,.filter-btn:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.res-card{background:var(--white);border:0.5px solid var(--line);border-radius:12px;padding:18px;transition:.25s}
+.res-card:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(8,80,65,.09);border-color:transparent}
+.res-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.res-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.res-icon.t-design{background:var(--teal-bg);color:var(--teal)}
+.res-icon.t-courseware{background:var(--amber-bg);color:var(--amber)}
+.res-icon.t-task{background:#E6F1FB;color:#185FA5}
+.res-icon.t-material{background:#FBEAF0;color:#993556}
+.res-type{font-size:10.5px;color:var(--muted);background:var(--bg);padding:2px 8px;border-radius:8px;font-weight:500}
+.res-title{font-weight:600;font-size:14px;margin-bottom:6px;line-height:1.5}
+.res-desc{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.res-foot{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:0.5px solid var(--line)}
+.res-meta{font-size:11px;color:var(--muted)}
+.res-meta b{color:var(--teal);font-weight:500}
+.res-dl{font-size:12px;color:var(--teal);font-weight:500;cursor:pointer}
+.res-dl:hover{color:var(--teal-dark)}
+
+/* ===== TRAINING ===== */
+.train-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.train-card{background:var(--white);border:0.5px solid var(--line);border-radius:12px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.train-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(8,80,65,.1);border-color:transparent}
+.train-cover{height:80px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:28px;color:#fff;font-weight:600;letter-spacing:2px}
+.train-cover.c1{background:linear-gradient(135deg,var(--teal),var(--teal-dark))}
+.train-cover.c2{background:linear-gradient(135deg,var(--amber),var(--amber-light))}
+.train-cover.c3{background:linear-gradient(135deg,#185FA5,#378ADD)}
+.train-cover.c4{background:linear-gradient(135deg,#993556,#D4537E)}
+.train-cover.c5{background:linear-gradient(135deg,#3B6D11,#639922)}
+.train-cover.c6{background:linear-gradient(135deg,#5C3A0E,#BA7517)}
+.train-body{padding:16px;flex:1;display:flex;flex-direction:column}
+.train-type{font-size:11px;color:var(--muted);margin-bottom:6px;display:flex;gap:8px;align-items:center}
+.train-type .tt{background:var(--teal-bg);color:var(--teal);padding:2px 8px;border-radius:8px;font-weight:500}
+.train-title{font-weight:600;font-size:14.5px;line-height:1.5;margin-bottom:7px}
+.train-desc{font-size:12.5px;color:var(--muted);line-height:1.7;flex:1;margin-bottom:12px}
+.train-foot{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:0.5px solid var(--line)}
+.train-meta{font-size:11px;color:var(--muted)}
+.train-dl{font-size:12px;color:var(--teal);font-weight:500;cursor:pointer}
+
+/* ===== CLASSROOM ===== */
+.class-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.class-card{background:var(--white);border:0.5px solid var(--line);border-radius:12px;overflow:hidden;transition:.25s}
+.class-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(8,80,65,.1);border-color:transparent}
+.class-thumb{height:130px;position:relative;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:36px;color:rgba(255,255,255,.9);font-weight:600}
+.class-thumb.t1{background:linear-gradient(135deg,#0F6E56,#1D9E75)}
+.class-thumb.t2{background:linear-gradient(135deg,#BA7517,#EF9F27)}
+.class-thumb.t3{background:linear-gradient(135deg,#185FA5,#378ADD)}
+.class-thumb.t4{background:linear-gradient(135deg,#993556,#D4537E)}
+.class-thumb.t5{background:linear-gradient(135deg,#3B6D11,#639922)}
+.class-thumb.t6{background:linear-gradient(135deg,#5C3A0E,#BA7517)}
+.class-play{position:absolute;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.25);border:0.5px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;backdrop-filter:blur(4px)}
+.class-body{padding:16px}
+.class-grade{font-size:11.5px;color:var(--teal);font-weight:500;margin-bottom:5px}
+.class-title{font-weight:600;font-size:14.5px;margin-bottom:6px;line-height:1.5}
+.class-teacher{font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.class-teacher .av{width:24px;height:24px;border-radius:50%;background:var(--teal-bg);color:var(--teal);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;margin-right:6px}
+
+/* ===== RESEARCH (文章) ===== */
+.res-article-list{display:flex;flex-direction:column;gap:14px}
+.article-card{background:var(--white);border:0.5px solid var(--line);border-radius:12px;padding:18px 20px;transition:.25s;cursor:pointer;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.article-card:hover{transform:translateX(4px);box-shadow:0 6px 20px rgba(8,80,65,.08);border-color:transparent}
+.article-icon{width:40px;height:40px;border-radius:10px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.article-card:nth-child(3n+2) .article-icon{background:var(--amber-bg)}
+.article-card:nth-child(3n+3) .article-icon{background:#E6F1FB}
+.article-info .at-type{font-size:11px;color:var(--muted);margin-bottom:4px;display:flex;gap:8px;align-items:center}
+.article-info .at-type .at-tag{background:var(--teal-bg);color:var(--teal);padding:2px 8px;border-radius:8px;font-weight:500}
+.article-card:nth-child(3n+2) .at-type .at-tag{background:var(--amber-bg);color:var(--amber)}
+.article-card:nth-child(3n+3) .at-type .at-tag{background:#E6F1FB;color:#185FA5}
+.article-info .at-title{font-weight:600;font-size:15px;margin-bottom:5px;line-height:1.5}
+.article-info .at-excerpt{font-size:12.5px;color:var(--muted);line-height:1.7;margin-bottom:6px}
+.article-info .at-meta{font-size:11.5px;color:var(--muted)}
+
+/* ===== READING ===== */
+.read-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.read-card{background:var(--white);border:0.5px solid var(--line);border-radius:12px;overflow:hidden;transition:.28s;display:flex;flex-direction:column}
+.read-card:hover{transform:translateY(-5px);box-shadow:0 12px 34px rgba(8,80,65,.12);border-color:transparent}
+.read-cover{height:120px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.read-cover .book-spine{width:50px;height:90px;border-radius:3px 6px 6px 3px;box-shadow:2px 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;font-weight:600;color:#fff;writing-mode:vertical-rl;text-orientation:upright;letter-spacing:3px;padding:8px 4px}
+.read-cover.b1{background:linear-gradient(135deg,#E1F5EE,#F1EFE8)}
+.read-cover.b1 .book-spine{background:linear-gradient(180deg,#0F6E56,#085041)}
+.read-cover.b2{background:linear-gradient(135deg,#FAEEDA,#F1EFE8)}
+.read-cover.b2 .book-spine{background:linear-gradient(180deg,#BA7517,#854F0B)}
+.read-cover.b3{background:linear-gradient(135deg,#E6F1FB,#F1EFE8)}
+.read-cover.b3 .book-spine{background:linear-gradient(180deg,#185FA5,#0C447C)}
+.read-cover.b4{background:linear-gradient(135deg,#FBEAF0,#F1EFE8)}
+.read-cover.b4 .book-spine{background:linear-gradient(180deg,#993556,#72243E)}
+.read-cover.b5{background:linear-gradient(135deg,#EAF3DE,#F1EFE8)}
+.read-cover.b5 .book-spine{background:linear-gradient(180deg,#3B6D11,#27500A)}
+.read-cover.b6{background:linear-gradient(135deg,#E1F5EE,#F1EFE8)}
+.read-cover.b6 .book-spine{background:linear-gradient(180deg,#534AB7,#3C3489)}
+.read-cover.b7{background:linear-gradient(135deg,#FAEEDA,#F1EFE8)}
+.read-cover.b7 .book-spine{background:linear-gradient(180deg,#D85A30,#993C1D)}
+.read-cover.b8{background:linear-gradient(135deg,#F1EFE8,#E8E7E1)}
+.read-cover.b8 .book-spine{background:linear-gradient(180deg,#5F5E5A,#444441)}
+.read-body{padding:16px;flex:1;display:flex;flex-direction:column}
+.read-cat{font-size:11px;margin-bottom:6px}
+.read-cat .rc{padding:2px 8px;border-radius:8px;font-weight:500}
+.read-cat .rc.c1{background:var(--teal-bg);color:var(--teal)}
+.read-cat .rc.c2{background:var(--amber-bg);color:var(--amber)}
+.read-cat .rc.c3{background:#E6F1FB;color:#185FA5}
+.read-title{font-weight:600;font-size:14px;margin-bottom:4px;line-height:1.5}
+.read-author{font-size:12px;color:var(--muted);margin-bottom:8px}
+.read-desc{font-size:12.5px;color:var(--muted);line-height:1.7;flex:1;margin-bottom:10px}
+.read-why{font-size:12px;color:var(--teal);background:var(--teal-bg);padding:6px 10px;border-radius:8px;line-height:1.6}
+.read-why b{color:var(--teal-dark)}
+
+/* ===== TEAM ===== */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.member{background:var(--white);border:0.5px solid var(--line);border-radius:14px;padding:22px 18px;text-align:center;transition:.25s;position:relative;overflow:hidden}
+.member::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal-mid),var(--teal-light))}
+.member:hover{transform:translateY(-5px);box-shadow:0 12px 32px rgba(8,80,65,.11);border-color:transparent}
+.member.lead::before{background:linear-gradient(90deg,var(--amber-light),var(--amber))}
+.avatar{width:60px;height:60px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:22px;font-weight:600;color:#fff}
+.avatar.a1{background:linear-gradient(135deg,var(--amber),var(--amber-light))}
+.avatar.a2{background:linear-gradient(135deg,var(--teal),var(--teal-mid))}
+.avatar.a3{background:linear-gradient(135deg,#378ADD,#5FA8E8)}
+.avatar.a4{background:linear-gradient(135deg,#993556,#D4537E)}
+.avatar.a5{background:linear-gradient(135deg,#3B6D11,#639922)}
+.member .name{font-weight:600;font-size:15px;margin-bottom:3px}
+.member .role{font-size:12px;color:var(--teal);font-weight:500;margin-bottom:6px}
+.member.lead .role{color:var(--amber)}
+.member .desc{font-size:12.5px;color:var(--muted);line-height:1.6}
+.member .lead-tag{position:absolute;top:12px;right:12px;font-size:10.5px;background:var(--amber-bg);color:var(--amber);padding:2px 8px;border-radius:9px;font-weight:500}
+
+/* ===== RESEARCH (课题) ===== */
+.research-box{display:grid;grid-template-columns:1fr 1.3fr;gap:24px;align-items:start}
+.research-badge{background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:14px;padding:28px;color:#fff;position:sticky;top:120px}
+.research-badge .rt{font-family:var(--serif);font-size:13px;opacity:.8;margin-bottom:8px}
+.research-badge .rn{font-family:var(--serif);font-size:19px;font-weight:600;line-height:1.5;margin-bottom:16px}
+.research-badge .meta{display:flex;gap:18px;font-size:11.5px;opacity:.85;padding-top:14px;border-top:0.5px solid rgba(255,255,255,.2)}
+.research-info p{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:12px}
+.research-info p strong{color:var(--ink);font-weight:500}
+.timeline{position:relative;padding-left:32px;margin-top:8px}
+.timeline::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--teal-light),var(--teal-bg))}
+.tl-item{position:relative;padding-bottom:24px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-28px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--white);border:3px solid var(--teal);box-shadow:0 0 0 3px var(--teal-bg)}
+.tl-item.done::before{background:var(--teal)}
+.tl-date{font-size:12px;color:var(--teal);font-weight:600;margin-bottom:4px}
+.tl-title{font-weight:600;font-size:14.5px;margin-bottom:4px}
+.tl-desc{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* ===== QUOTE BAR ===== */
+.quote-bar{background:var(--white);border-bottom:0.5px solid var(--line)}
+.quote-inner{max-width:var(--maxw);margin:0 auto;padding:18px 24px;display:flex;align-items:center;gap:16px}
+.quote-mark{font-size:32px;color:var(--teal-light);font-family:var(--serif);line-height:1;flex-shrink:0}
+.quote-text{font-family:var(--serif);font-size:14px;color:var(--muted);font-style:italic;line-height:1.6}
+.quote-text em{color:var(--teal);font-style:normal}
+
+/* ===== CONTACT / FOOTER ===== */
+.contact{background:linear-gradient(135deg,#0A4033,#0F6E56);color:#fff;padding:44px 0}
+.contact-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.3fr 1fr;gap:36px;align-items:center}
+.contact h2{font-family:var(--serif);font-size:24px;margin-bottom:10px;font-weight:600}
+.contact p{color:rgba(255,255,255,.82);font-size:14px;line-height:1.8;margin-bottom:18px}
+.contact-info{background:rgba(255,255,255,.08);border:0.5px solid rgba(255,255,255,.18);border-radius:12px;padding:20px}
+.contact-info .row{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:0.5px solid rgba(255,255,255,.12)}
+.contact-info .row:last-child{border-bottom:none}
+.contact-info .ico{font-size:16px;flex-shrink:0;margin-top:1px}
+.contact-info .lbl{font-size:11px;color:rgba(255,255,255,.6);margin-bottom:1px}
+.contact-info .val{font-size:13.5px}
+.footer{background:#062921;color:rgba(255,255,255,.55);padding:22px 0;font-size:12.5px}
+.footer-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+
+@media(max-width:880px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--white);padding:14px 24px;gap:12px;border-bottom:0.5px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+  .nav-links.open a{padding:6px 0;font-size:14px}
+  .burger{display:flex}
+  .hero-inner{grid-template-columns:1fr;gap:20px;padding:28px 20px 24px}
+  .hero-title{font-size:25px}
+  .hero-sub{font-size:14px;margin-bottom:20px}
+  .stats-row{grid-template-columns:repeat(2,1fr);padding:16px 14px}
+  .stat-num{font-size:24px}
+  .host-card{padding:14px 16px}
+  .carousel{min-height:240px}
+  .slide-img{max-height:280px}
+  .slide-content h2{font-size:16px}
+  .slide-content p{font-size:11.5px}
+  .slide-content{padding:12px 16px}
+  .info-inner{grid-template-columns:1fr;gap:16px}
+  .brief-box{flex-direction:column;gap:8px}
+  .research-box{grid-template-columns:1fr}
+  .research-badge{position:static}
+  .contact-inner{grid-template-columns:1fr}
+  .tab-btn{padding:9px 13px;font-size:13px}
+  .article-card{grid-template-columns:1fr;gap:10px}
+  .tab-layout{grid-template-columns:1fr}
+  /* 团队风采：横向滚动展示 */
+  .team-panel{position:static;margin-bottom:16px;max-width:100%;overflow:visible !important}
+  .team-panel-head{border-radius:14px 14px 0 0}
+  .team-panel-body{display:flex;gap:10px;overflow-x:auto;padding:12px 10px 14px;-webkit-overflow-scrolling:touch}
+  .team-panel-body::-webkit-scrollbar{height:0}
+  .tp-member{min-width:96px;flex-shrink:0;margin-bottom:0}
+  .tp-member.lead{grid-column:auto;min-width:110px}
+  .team-panel-foot{padding:8px 12px}
+  /* Tab导航触控优化 */
+  .tab-nav{top:60px;padding-top:4px}
+  /* 发刊词卡片移动端布局 */
+  .news-card[style*="grid-column"]{grid-template-columns:1fr !important}
+  .news-card[style*="grid-column"] .news-banner{width:100% !important;height:4px !important}
+  /* 页脚 */
+  .footer-inner{flex-direction:column;gap:6px;text-align:center}
+  /* 移动端轮播箭头常显 */
+  .carousel-arrow{opacity:.55;width:32px;height:32px;font-size:15px}
+}
+
+@media(max-width:480px){
+  .wrap{padding:0 16px}
+  .nav-inner{padding:0 16px;height:54px}
+  .hero{margin-top:54px}
+  .hero-inner{padding:22px 16px 20px;gap:18px}
+  .hero-title{font-size:22px}
+  .hero-sub{font-size:13px;margin-bottom:18px}
+  .hero-btn{padding:9px 18px;font-size:13px}
+  .stats-row{grid-template-columns:repeat(2,1fr);gap:8px;padding:14px 10px}
+  .stat-num{font-size:20px}
+  .stat-lbl{font-size:11px}
+  .host-card{padding:12px 14px;gap:10px}
+  .host-avatar{width:42px;height:42px}
+  .host-info .host-name{font-size:15px}
+  .carousel{min-height:200px}
+  .slide-img{max-height:220px}
+  .slide-content h2{font-size:14px}
+  .slide-content p{display:none}
+  .slide-content .tag{font-size:10.5px;padding:2px 10px}
+  .carousel-dots span{width:7px;height:7px}
+  .carousel-dots span.active{width:16px}
+  .info-inner{padding:16px 16px}
+  .brief-tag{font-size:11px}
+  .brief-text{font-size:12.5px;max-height:115px}
+  .notice-list .ni{font-size:12px}
+  .tabs-section{padding:16px 0 40px}
+  .tab-btn{padding:8px 11px;font-size:12.5px}
+  .tab-btn .cnt{font-size:10px;padding:0 5px}
+  .news-body{padding:14px}
+  .news-title{font-size:14px}
+  .news-excerpt{font-size:12px}
+  .news-date{font-size:11px}
+  .res-grid{grid-template-columns:1fr}
+  .train-grid{grid-template-columns:1fr}
+  .class-grid{grid-template-columns:1fr}
+  .read-grid{grid-template-columns:1fr}
+  .local-grid{grid-template-columns:1fr}
+  .article-card{padding:14px}
+  .article-info .at-title{font-size:14px}
+  .article-info .at-excerpt{font-size:12px}
+  .contact{padding:32px 0}
+  .contact h2{font-size:20px}
+  .contact p{font-size:13px}
+  .contact-info{padding:16px}
+  .sub-tab-btn{padding:7px 12px;font-size:12px}
+  .res-filter{gap:6px}
+  .filter-btn{padding:5px 12px;font-size:12px}
+  .quote-inner{padding:14px 16px;gap:10px}
+  .quote-mark{font-size:26px}
+  .quote-text{font-size:13px}
+  .footer{padding:16px 0;font-size:11.5px}
+  .tp-avatar{width:38px;height:38px}
+  .tp-name{font-size:12px}
+  .tp-role{font-size:10px}
+  .tp-lead-tag{font-size:8px}
+  .train-cover{height:64px;font-size:22px}
+  .class-thumb{height:100px;font-size:28px}
+  .read-cover{height:90px}
+  .read-cover .book-spine{width:40px;height:72px;font-size:13px}
+}
+
+/* 手机端团队风采浮动标题 */
+.team-float-head{
+  display:none;
+  position:fixed;
+  top:60px;
+  left:0;
+  right:0;
+  z-index:18;
+  background:linear-gradient(135deg,#0A4033,#0F6E56);
+  color:#fff;
+  padding:12px 16px;
+  text-align:center;
+  box-shadow:0 2px 12px rgba(0,0,0,.15);
+}
+.team-float-head .tfh-title{font-family:'QiTi','Noto Serif SC','SimSun','宋体',serif;font-size:16px;font-weight:600}
+.team-float-head .tfh-sub{font-size:10px;opacity:.65;letter-spacing:.5px;margin-top:1px}
+@media(max-width:480px){
+  .team-float-head{top:54px;padding:10px 16px}
+  .team-float-head .tfh-title{font-size:15px}
+  .team-float-head .tfh-sub{font-size:9px}
+}
+
+/* ===== 乡土资源子菜单 ===== */
+.sub-tab-nav{display:flex;gap:0;border-bottom:0.5px solid var(--line);margin-bottom:20px;overflow-x:auto;flex-wrap:nowrap;padding-top:4px}
+.sub-tab-nav::-webkit-scrollbar{height:0}
+.sub-tab-btn{padding:8px 16px;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:.22s;font-family:var(--sans);white-space:nowrap;position:relative;top:0.5px}
+.sub-tab-btn:hover{color:var(--teal)}
+.sub-tab-btn.active{color:var(--teal);border-bottom-color:var(--teal)}
+.sub-pane{display:none;animation:fadeUp .35s ease}
+.sub-pane.active{display:block}
+
+/* 乡土资源卡片 */
+.local-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.local-card{background:var(--white);border:0.5px solid var(--line);border-radius:12px;overflow:hidden;transition:.25s}
+.local-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(8,80,65,.08);border-color:transparent}
+.local-card-img{height:120px;display:flex;align-items:center;justify-content:center;color:#fff}
+.local-card-body{padding:14px 16px 16px}
+.local-card-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.local-card-desc{font-size:12.5px;color:var(--muted);line-height:1.7;margin-bottom:10px}
+.local-card-tags{display:flex;gap:6px;flex-wrap:wrap}
+.local-card-tags .tag{font-size:11px;padding:2px 8px;border-radius:8px;background:var(--teal-bg);color:var(--teal)}
+
+/* 乡土资源文章 */
+.local-article{padding:8px 0}
+.local-article h3{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:14px;font-weight:600}
+.local-article p{font-size:13.5px;color:var(--text);line-height:1.85;margin-bottom:12px}
+.local-placeholder{text-align:center;padding:48px 24px;color:var(--muted);font-size:13.5px;background:var(--bg);border-radius:12px;border:0.5px dashed var(--line);margin-top:16px}
+</style>
+</head>
+<body>
+
+<!-- 手机端团队风采浮动标题 -->
+<div class="team-float-head" id="teamFloatHead">
+  <div class="tfh-title">团队风采</div>
+  <div class="tfh-sub">TEAM · 永福历史教研工作室</div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo"><span class="logo-mark">福</span><span>永福历史教研工作室</span></a>
+    <div class="nav-links" id="navLinks">
+      <a onclick="document.getElementById('infoBar').scrollIntoView({behavior:'smooth',block:'start'})">公告</a>
+      <a onclick="goTab('news')">教研动态</a>
+      <a onclick="goTab('training')">教师培训</a>
+      <a onclick="goTab('classroom')">课堂教学</a>
+      <a onclick="goTab('resources')">教学资源</a>
+      <a onclick="goTab('articles')">教学研究</a>
+      <a onclick="goTab('reading')">乡土资源</a>
+      <a onclick="goTab('research')">课题研究</a>
+      <a onclick="goTab('contact')" class="nav-cta">联系我们</a>
+    </div>
+    <div class="nav-search" id="navSearch">
+      <input type="text" class="search-input" id="searchInput" placeholder="搜索文章、资源..." onkeypress="if(event.key==='Enter')doSearch()">
+      <button class="search-btn" onclick="doSearch()" title="搜索"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:block"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+    </div>
+    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO BANNER (深绿色大横幅) -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">永福县初中历史教研 · 共研互促</div>
+      <h1 class="hero-title">永福历史教研<span class="hl">工作室</span></h1>
+      <p class="hero-sub">依托永福乡土资源，构建农村初中历史"学为中心"课堂——让历史课堂扎根乡土、走向学生、回归生活。</p>
+      <div class="hero-btns">
+        <button class="hero-btn primary" onclick="goTab('research')">查看课题研究 →</button>
+        <button class="hero-btn outline" onclick="goTab('resources')">浏览教学资源</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num"><span id="stat-team">12</span><small>人</small></div><div class="stat-lbl">教研团队</div></div>
+        <div class="stat"><div class="stat-num"><span id="stat-research">1</span><small>项</small></div><div class="stat-lbl">申报课题</div></div>
+        <div class="stat"><div class="stat-num"><span id="stat-resource">36</span><small>份</small></div><div class="stat-lbl">教学资源</div></div>
+        <div class="stat"><div class="stat-num"><span id="stat-activity">8</span><small>期</small></div><div class="stat-lbl">教研活动</div></div>
+      </div>
+      <div class="host-card" onclick="window.location.href='profile-zhang.html'" style="cursor:pointer;transition:border-color .2s" onmouseenter="this.style.borderColor='var(--amber-light)'" onmouseleave="this.style.borderColor=''">
+        <img class="host-avatar" src="images/avatar-zhang.jpg" alt="">
+        <div class="host-info">
+          <div class="host-role">工作室主持人</div>
+          <div class="host-name">张阳春</div>
+          <div class="host-unit">永福县教研室 · 历史教研员</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO BAR: brief + notice (在轮播上方) -->
+<div class="info-bar" id="infoBar">
+  <div class="info-inner">
+    <div class="brief-box">
+      <span class="brief-tag">工作室简介</span>
+      <p class="brief-text" id="briefText">永福历史教研工作室（共研互促工作室）在<strong>永福县教育局教学研究室</strong>指导下成立，由县教研室历史教研员<strong>张阳春</strong>主持。工作室汇聚来自永福县第一中学、湾里初级中学、永安初级中学、罗锦初级中学、堡里初级中学、百寿初级中学、月山初级中学等多所学校的优秀历史教师，其中多数是充满活力的青年教师。他们业务精湛、年轻有为，是永福县初中历史教学的骨干力量，整个团队朝气蓬勃、积极向上，怀揣着对历史教育的热忱，共同扎根课堂、深耕教研。工作室以<strong>"学为中心"</strong>为核心理念，积极依托永福本土资源——百寿岩、永宁州古城、状元文化、红色记忆与民俗非遗，将乡土史料转化为鲜活的教学素材，推动农村初中历史课堂扎根落地。目前，工作室正积极申报课题<strong>《依托永福乡土资源，构建农村初中历史"学为中心"课堂的实践研究》</strong>，以研促教、以教带研，带动全县历史教师专业成长。</p>
+      <button class="brief-toggle" onclick="toggleBrief()" id="briefToggle">展开更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+    </div>
+    <div class="notice-box">
+      <div class="notice-head">
+        <span class="nt">工作室公告</span>
+      </div>
+      <div class="notice-list">
+        <div class="ni" onclick="window.location.href='fakanji.html'" style="color:var(--teal);font-weight:500"><span class="ndate" style="color:var(--amber)">06-21</span><span class="ntitle">【发刊词】让历史在乡土中生长——写在网站上线之际</span></div>
+        <div class="ni"><span class="ndate">06-18</span><span class="ntitle">关于举办"学为中心"历史课堂专题研讨的通知</span></div>
+        <div class="ni"><span class="ndate">06-10</span><span class="ntitle">关于提交2026年春季学期教学设计成果的通知</span></div>
+        <div class="ni"><span class="ndate">05-28</span><span class="ntitle">关于组织教师参加暑期历史学科培训的通知</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUOTE BAR (在轮播上方) -->
+<div class="quote-bar">
+  <div class="quote-inner">
+    <span class="quote-mark">"</span>
+    <span class="quote-text"><em>让农村孩子在乡土里读懂历史，在历史中认识家乡。</em></span>
+  </div>
+</div>
+
+<!-- CAROUSEL (滚动轮播，内容区宽度) -->
+<div class="carousel-wrap">
+<div class="carousel" id="carousel">
+  <div class="carousel-track" id="carouselTrack">
+    <div class="slide slide-1">
+      <img class="slide-img" src="images/banner1-wind.jpg" alt="永福风车山">
+      <div class="slide-content">
+        <span class="tag">永福风光</span>
+        <h2>青山绿水，福寿之乡</h2>
+        <p>群山环绕，风车转动在山脊之上——这就是我们扎根的土地</p>
+      </div>
+    </div>
+    <div class="slide slide-2">
+      <img class="slide-img" src="images/banner2-flower.jpg" alt="海菜花">
+      <div class="slide-content">
+        <span class="tag">永福生态</span>
+        <h2>海菜花开，碧波荡漾</h2>
+        <p>清澈的河水中，海菜花静静绽放——引导学生热爱家乡的天然素材</p>
+      </div>
+    </div>
+    <div class="slide slide-3">
+      <img class="slide-img" src="images/banner3-baishouyan.jpg" alt="百寿岩">
+      <div class="slide-content">
+        <span class="tag">百寿岩</span>
+        <h2>千年岩洞，百寿传奇</h2>
+        <p>百寿岩摩崖石刻承载着深厚的寿文化——乡土历史教学的珍贵资源</p>
+      </div>
+    </div>
+    <div class="slide slide-4">
+      <img class="slide-img" src="images/banner4-riverside.jpg" alt="凤城新貌">
+      <div class="slide-content">
+        <span class="tag">凤城新貌</span>
+        <h2>碧水穿城，山环水绕</h2>
+        <p>永福县城凤城，群山环抱中碧水蜿蜒——这是我们生活和工作的地方</p>
+      </div>
+    </div>
+    <div class="slide slide-5">
+      <img class="slide-img" src="images/banner5-baishou.jpg" alt="百寿岩寿字石刻">
+      <div class="slide-content">
+        <span class="tag">百寿岩</span>
+        <h2>百寿大字，千载传颂</h2>
+        <p>"寿"字石刻遒劲有力，一笔一画镌刻着永福深厚的福寿文化</p>
+      </div>
+    </div>
+    <div class="slide slide-6">
+      <img class="slide-img" src="images/banner6-yongningzhou.jpg" alt="永宁州古城">
+      <div class="slide-content">
+        <span class="tag">永宁州古城</span>
+        <h2>古城巍峨，岁月留痕</h2>
+        <p>永宁州古城门矗立数百年——翻开一本活的地方历史教科书</p>
+      </div>
+    </div>
+    <div class="slide slide-7">
+      <img class="slide-img" src="images/banner7-bridge.jpg" alt="凤城风雨桥">
+      <div class="slide-content">
+        <span class="tag">凤城风雨桥</span>
+        <h2>古韵新风，人文永福</h2>
+        <p>风雨桥横跨江面，传统建筑与现代生活交相辉映</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-arrow prev" onclick="carouselSlide(-1)">‹</button>
+  <button class="carousel-arrow next" onclick="carouselSlide(1)">›</button>
+  <div class="carousel-dots" id="carouselDots"></div>
+</div>
+</div><!-- /carousel-wrap -->
+
+<!-- TAB SECTION -->
+<section class="tabs-section">
+  <div class="wrap">
+    <div class="tab-layout">
+
+      <!-- ===== 左侧：团队风采面板 ===== -->
+      <aside class="team-panel" id="teamPanel">
+        <div class="team-panel-head" id="teamPanelHead">
+          <div class="tp-title">团队风采</div>
+          <div class="tp-sub">TEAM · 永福历史教研工作室</div>
+        </div>
+        <div class="team-panel-body">
+          <!-- 主持人 -->
+          <div class="tp-member lead" onclick="window.location.href='profile-zhang.html'" style="cursor:pointer">
+            <span class="tp-lead-tag">主持人</span>
+            <div class="tp-avatar a1"><img src="images/avatar-zhang.jpg" alt=""></div>
+            <div class="tp-name">张阳春</div>
+            <div class="tp-role">工作室主持人</div>
+          </div>
+          <!-- 成员 -->
+          <div class="tp-member" onclick="window.location.href='profile-wei.html'" style="cursor:pointer">
+            <img class="tp-avatar a2" src="images/avatar-wei.jpg" alt="">
+            <div class="tp-name">韦荣明</div>
+            <div class="tp-role">骨干成员</div>
+          </div>
+          <div class="tp-member" onclick="window.location.href='profile-liang.html'" style="cursor:pointer">
+            <img class="tp-avatar a3" src="images/avatar-liang.jpg" alt="">
+            <div class="tp-name">梁进明</div>
+            <div class="tp-role">骨干成员</div>
+          </div>
+          <div class="tp-member" onclick="window.location.href='profile-zeng.html'" style="cursor:pointer">
+            <img class="tp-avatar a4" src="images/avatar-zeng.jpg" alt="">
+            <div class="tp-name">曾学秀</div>
+            <div class="tp-role">骨干成员</div>
+          </div>
+          <div class="tp-member" onclick="window.location.href='profile-zhou.html'" style="cursor:pointer">
+            <div class="tp-avatar a5"><img src="images/avatar-zhou.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center"></div>
+            <div class="tp-name">周玮</div>
+            <div class="tp-role">骨干成员</div>
+          </div>
+          <div class="tp-member" onclick="window.location.href='profile-tang.html'" style="cursor:pointer">
+            <img class="tp-avatar a6" src="images/avatar-tang.jpg" alt="">
+            <div class="tp-name">唐燕山</div>
+            <div class="tp-role">骨干成员</div>
+          </div>
+          <div class="tp-member" onclick="window.location.href='profile-liao.html'" style="cursor:pointer">
+            <div class="tp-avatar a6"><img src="images/avatar-liao.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center"></div>
+            <div class="tp-name">廖宏倩</div>
+            <div class="tp-role">骨干成员</div>
+          </div>
+          <!-- 预留位 -->
+          <div class="tp-member" style="opacity:.5;border-style:dashed">
+            <div class="tp-avatar a4" style="background:#E5DED4;color:#999">＋</div>
+            <div class="tp-name" style="color:#999">待加入</div>
+            <div class="tp-role" style="color:#bbb">预留位</div>
+          </div>
+          <div class="tp-member" style="opacity:.5;border-style:dashed">
+            <div class="tp-avatar a5" style="background:#E5DED4;color:#999">＋</div>
+            <div class="tp-name" style="color:#999">待加入</div>
+            <div class="tp-role" style="color:#bbb">预留位</div>
+          </div>
+        </div>
+        <div class="team-panel-foot" style="padding:0">
+          <a href="team-all.html" style="display:block;text-align:center;padding:10px 8px;background:var(--teal-bg);color:var(--teal);border-radius:8px;text-decoration:none;font-size:13.5px;font-weight:600;transition:.2s" onmouseover="this.style.background='var(--teal)';this.style.color='#fff'" onmouseout="this.style.background='var(--teal-bg)';this.style.color='var(--teal)'">查看全部成员 →</a>
+        </div>
+      </aside>
+
+      <!-- ===== 右侧：Tab内容区 ===== -->
+      <div class="tab-content">
+    <div class="tab-nav" id="tabNav">
+      <button class="tab-btn active" data-tab="news">教研动态 <span class="cnt">5</span></button>
+      <button class="tab-btn" data-tab="training">教师培训 <span class="cnt">6</span></button>
+      <button class="tab-btn" data-tab="classroom">课堂教学 <span class="cnt">6</span></button>
+      <button class="tab-btn" data-tab="resources">教学资源 <span class="cnt">6</span></button>
+      <button class="tab-btn" data-tab="articles">教学研究 <span class="cnt">6</span></button>
+      <button class="tab-btn" data-tab="reading">乡土资源 <span class="cnt">5</span></button>
+      <button class="tab-btn" data-tab="research">课题研究 <span class="cnt">5</span></button>
+    </div>
+
+    <!-- NEWS -->
+    <div class="tab-pane active" id="pane-news">
+      <div class="news-grid">
+        <div class="news-card" onclick="window.location.href='fakanji.html'" style="cursor:pointer;grid-column:1 / -1;display:grid;grid-template-columns:auto 1fr;gap:0;overflow:hidden"><div class="news-banner" style="height:auto;width:5px;background:linear-gradient(180deg,var(--amber),var(--amber-light))"></div><div class="news-body" style="padding:20px 22px"><div class="news-date"><span class="chip" style="background:var(--amber-bg);color:var(--amber)">发刊词 · 创刊首篇</span> 2026年6月</div><div class="news-title" style="font-size:16px">让历史在乡土中生长——写在永福历史教研工作室网站上线之际</div><div class="news-excerpt">永福，福寿之乡。百寿岩前"寿"字千载，永宁州城岁月留痕。这片土地承载着厚重的过去，也孕育着希望的未来。让农村孩子在乡土里读懂历史，在历史中认识家乡——这是我们的初心，也是这个网站的使命。</div></div></div>
+        <div class="news-card"><div class="news-banner"></div><div class="news-body"><div class="news-date"><span class="chip">活动报道</span> 2026年5月</div><div class="news-title">工作室开展"学为中心"历史课堂专题研讨</div><div class="news-excerpt">围绕课题核心理念，工作室成员齐聚一堂，就如何在农村初中历史课堂落实"学为中心"展开深度研讨，形成初步操作框架。</div></div></div>
+        <div class="news-card"><div class="news-banner"></div><div class="news-body"><div class="news-date"><span class="chip">乡土调研</span> 2026年4月</div><div class="news-title">永福乡土历史资源实地调研活动</div><div class="news-excerpt">工作室成员赴百寿岩、永宁州古城等地开展乡土资源田野调查，收集第一手素材，为教学资源开发奠定基础。</div></div></div>
+        <div class="news-card"><div class="news-banner"></div><div class="news-body"><div class="news-date"><span class="chip">课题动态</span> 2026年</div><div class="news-title">工作室积极筹备课题申报工作</div><div class="news-excerpt">工作室围绕《依托永福乡土资源，构建农村初中历史"学为中心"课堂的实践研究》开展前期调研与文献梳理，积极准备课题申报材料。</div></div></div>
+        <div class="news-card"><div class="news-banner"></div><div class="news-body"><div class="news-date"><span class="chip">送教下乡</span> 2026年3月</div><div class="news-title">工作室送教下乡暨乡土历史示范课</div><div class="news-excerpt">工作室骨干成员走进农村初中，带来融入永福乡土元素的历史示范课，受到师生欢迎。</div></div></div>
+      </div>
+    </div>
+
+    <!-- TRAINING -->
+    <div class="tab-pane" id="pane-training">
+      <div class="train-grid">
+        <div class="train-card"><div class="train-cover c1">核心素养</div><div class="train-body"><div class="train-type"><span class="tt">专题讲座</span> 课件 · 36页</div><div class="train-title">核心素养导向下的初中历史教学</div><div class="train-desc">系统解读历史学科五大核心素养内涵，结合初中教学案例，指导如何在课堂中落实素养目标。</div><div class="train-foot"><span class="train-meta">主讲：张阳春 · 2026.5</span><span class="train-dl">下载课件 ↓</span></div></div></div>
+        <div class="train-card"><div class="train-cover c2">课标解读</div><div class="train-body"><div class="train-type"><span class="tt">专题讲座</span> 课件 · 48页</div><div class="train-title">义务教育历史课程标准（2022年版）解读</div><div class="train-desc">深度解读新课标变化要点，重点剖析课程内容结构调整与学业质量要求，帮助教师准确把握教学方向。</div><div class="train-foot"><span class="train-meta">主讲：特邀专家 · 2026.4</span><span class="train-dl">下载课件 ↓</span></div></div></div>
+        <div class="train-card"><div class="train-cover c3">教学设计</div><div class="train-body"><div class="train-type"><span class="tt">技能培训</span> 课件 · 30页</div><div class="train-title">"学为中心"历史课堂教学设计实操</div><div class="train-desc">从教学目标制定到学习活动设计，手把手指导如何设计以学生为主体的历史课堂，含设计模板与案例。</div><div class="train-foot"><span class="train-meta">主讲：李老师 · 2026.4</span><span class="train-dl">下载课件 ↓</span></div></div></div>
+        <div class="train-card"><div class="train-cover c4">史料教学</div><div class="train-body"><div class="train-type"><span class="tt">专题讲座</span> 课件 · 42页</div><div class="train-title">史料教学中的方法与策略</div><div class="train-desc">介绍史料甄选、呈现与设问的基本方法，结合乡土史料案例，展示如何在课堂中有效运用史料教学。</div><div class="train-foot"><span class="train-meta">主讲：陈老师 · 2026.3</span><span class="train-dl">下载课件 ↓</span></div></div></div>
+        <div class="train-card"><div class="train-cover c5">信息技术</div><div class="train-body"><div class="train-type"><span class="tt">技能培训</span> 课件 · 28页</div><div class="train-title">信息技术与历史教学融合应用</div><div class="train-desc">介绍希沃白板、历史地图动态演示、微课制作等实用技术，助力农村教师提升课堂信息化水平。</div><div class="train-foot"><span class="train-meta">主讲：刘老师 · 2026.3</span><span class="train-dl">下载课件 ↓</span></div></div></div>
+        <div class="train-card"><div class="train-cover c6">命题评价</div><div class="train-body"><div class="train-type"><span class="tt">专题讲座</span> 课件 · 34页</div><div class="train-title">初中历史试题编制与学习评价</div><div class="train-desc">讲解历史试题编制原理与技术，分析中考命题趋势，指导教师科学设计过程性评价与终结性评价。</div><div class="train-foot"><span class="train-meta">主讲：王老师 · 2026.2</span><span class="train-dl">下载课件 ↓</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- CLASSROOM -->
+    <div class="tab-pane" id="pane-classroom">
+      <div class="class-grid">
+        <div class="class-card"><div class="class-thumb t1">状元文化<div class="class-play">▶</div></div><div class="class-body"><div class="class-grade">八年级 · 中国古代史</div><div class="class-title">《永福状元文化与科举制度》</div><div class="class-teacher"><span><span class="av">李</span>李老师</span><span>2026.5</span></div></div></div>
+        <div class="class-card"><div class="class-thumb t2">百寿岩<div class="class-play">▶</div></div><div class="class-body"><div class="class-grade">七年级 · 中国古代史</div><div class="class-title">《百寿岩与永福寿文化探秘》</div><div class="class-teacher"><span><span class="av">王</span>王老师</span><span>2026.5</span></div></div></div>
+        <div class="class-card"><div class="class-thumb t3">永宁州<div class="class-play">▶</div></div><div class="class-body"><div class="class-grade">八年级 · 中国古代史</div><div class="class-title">《永宁州古城与明清地方治理》</div><div class="class-teacher"><span><span class="av">陈</span>陈老师</span><span>2026.4</span></div></div></div>
+        <div class="class-card"><div class="class-thumb t4">红色记忆<div class="class-play">▶</div></div><div class="class-body"><div class="class-grade">八年级 · 中国近代史</div><div class="class-title">《永福红色记忆——革命先辈的故事》</div><div class="class-teacher"><span><span class="av">刘</span>刘老师</span><span>2026.4</span></div></div></div>
+        <div class="class-card"><div class="class-thumb t5">宋代经济<div class="class-play">▶</div></div><div class="class-body"><div class="class-grade">七年级 · 中国古代史</div><div class="class-title">《宋代南方经济的发展》示范课</div><div class="class-teacher"><span><span class="av">李</span>李老师</span><span>2026.3</span></div></div></div>
+        <div class="class-card"><div class="class-thumb t6">抗日战争<div class="class-play">▶</div></div><div class="class-body"><div class="class-grade">八年级 · 中国近代史</div><div class="class-title">《全民族抗战》同课异构展示</div><div class="class-teacher"><span><span class="av">王</span>王老师</span><span>2026.3</span></div></div></div>
+      </div>
+    </div>
+
+    <!-- RESOURCES -->
+    <div class="tab-pane" id="pane-resources">
+      <div class="res-filter" id="resFilter">
+        <button class="filter-btn active" data-filter="all">全部资源</button>
+        <button class="filter-btn" data-filter="design">教学设计</button>
+        <button class="filter-btn" data-filter="courseware">课件</button>
+        <button class="filter-btn" data-filter="task">学习任务单</button>
+        <button class="filter-btn" data-filter="material">乡土素材包</button>
+      </div>
+      <div class="res-grid" id="resGrid">
+        <div class="res-card" data-type="design"><div class="res-top"><div class="res-icon t-design">📝</div><span class="res-type">教学设计</span></div><div class="res-title">《永福状元文化与科举》教学设计</div><div class="res-desc">融合永福状元文化史料，设计"学为中心"的探究式学习活动，含课时目标与活动流程。</div><div class="res-foot"><span class="res-meta">八年级 · <b>1课时</b></span><span class="res-dl">下载 ↓</span></div></div>
+        <div class="res-card" data-type="courseware"><div class="res-top"><div class="res-icon t-courseware">📊</div><span class="res-type">课件</span></div><div class="res-title">百寿岩与永福寿文化 PPT 课件</div><div class="res-desc">图文并茂呈现百寿岩"寿"字文化，配套课堂互动问题，可直接用于课堂教学。</div><div class="res-foot"><span class="res-meta">七年级 · <b>42页</b></span><span class="res-dl">下载 ↓</span></div></div>
+        <div class="res-card" data-type="task"><div class="res-top"><div class="res-icon t-task">📋</div><span class="res-type">学习任务单</span></div><div class="res-title">永宁州古城探究学习任务单</div><div class="res-desc">以永宁州古城为情境，设计小组合作探究任务，引导学生"做中学"。</div><div class="res-foot"><span class="res-meta">八年级 · <b>小组合作</b></span><span class="res-dl">下载 ↓</span></div></div>
+        <div class="res-card" data-type="material"><div class="res-top"><div class="res-icon t-material">🗺️</div><span class="res-type">乡土素材包</span></div><div class="res-title">永福红色记忆史料素材包</div><div class="res-desc">整理永福革命历史图文资料，按主题分类，为教师开发红色历史课例提供素材支撑。</div><div class="res-foot"><span class="res-meta">通用 · <b>含图片</b></span><span class="res-dl">下载 ↓</span></div></div>
+        <div class="res-card" data-type="design"><div class="res-top"><div class="res-icon t-design">📝</div><span class="res-type">教学设计</span></div><div class="res-title">《永福往事》单元主题教学设计</div><div class="res-desc">以永福地方史为线索的跨课时主题设计，体现乡土资源与大单元教学融合。</div><div class="res-foot"><span class="res-meta">九年级 · <b>3课时</b></span><span class="res-dl">下载 ↓</span></div></div>
+        <div class="res-card" data-type="courseware"><div class="res-top"><div class="res-icon t-courseware">📊</div><span class="res-type">课件</span></div><div class="res-title">"学为中心"课堂模式概览课件</div><div class="res-desc">面向教师培训，系统介绍"学为中心"历史课堂的操作要素与实施策略。</div><div class="res-foot"><span class="res-meta">教师培训 · <b>36页</b></span><span class="res-dl">下载 ↓</span></div></div>
+      </div>
+    </div>
+
+    <!-- ARTICLES (教学研究) -->
+    <div class="tab-pane" id="pane-articles">
+      <div class="res-article-list">
+        <div class="article-card"><div class="article-icon">📄</div><div class="article-info"><div class="at-type"><span class="at-tag">教学论文</span> 课题研究</div><div class="at-title">乡土资源融入农村初中历史课堂的实践与思考</div><div class="at-excerpt">以永福百寿岩、状元文化为例，探讨如何将乡土资源有效融入历史课堂教学，激发学生学习兴趣，培育家国情怀素养。</div><div class="at-meta">张阳春 · 2026年5月 · 约4500字</div></div></div>
+        <div class="article-card"><div class="article-icon">💡</div><div class="article-info"><div class="at-type"><span class="at-tag">教学反思</span> 课堂实践</div><div class="at-title">"学为中心"理念下的历史课堂任务设计初探</div><div class="at-excerpt">结合教学实践，反思"学为中心"课堂中学习任务设计的关键要素，提出任务驱动、问题导向的课堂操作策略。</div><div class="at-meta">李老师 · 2026年4月 · 约3200字</div></div></div>
+        <div class="article-card"><div class="article-icon">📖</div><div class="article-info"><div class="at-type"><span class="at-tag">读书心得</span> 专业成长</div><div class="at-title">读《笃学行思录》有感——历史教师的修行之路</div><div class="at-excerpt">李惠军老师的《笃学行思录》给一线历史教师以深刻启示，本文从教学反思、专业阅读、课堂打磨三个角度分享阅读感悟。</div><div class="at-meta">王老师 · 2026年4月 · 约2800字</div></div></div>
+        <div class="article-card"><div class="article-icon">📄</div><div class="article-info"><div class="at-type"><span class="at-tag">教学论文</span> 评价研究</div><div class="at-title">初中历史过程性评价的实践探索——以学习任务单为载体</div><div class="at-excerpt">以学习任务单为过程性评价载体，构建"目标—任务—评价"一体化教学模式，提升课堂教学有效性。</div><div class="at-meta">陈老师 · 2026年3月 · 约3800字</div></div></div>
+        <div class="article-card"><div class="article-icon">💡</div><div class="article-info"><div class="at-type"><span class="at-tag">教学反思</span> 信息技术</div><div class="at-title">信息技术助力农村初中历史课堂的几点尝试</div><div class="at-excerpt">分享在农村初中历史课堂中运用希沃白板、微课视频等信息技术的实践体会，探讨技术赋能课堂的路径。</div><div class="at-meta">刘老师 · 2026年3月 · 约2600字</div></div></div>
+        <div class="article-card"><div class="article-icon">📄</div><div class="article-info"><div class="at-type"><span class="at-tag">教学论文</span> 乡土资源</div><div class="at-title">永福红色资源在初中历史教学中的开发与利用</div><div class="at-excerpt">系统梳理永福红色革命历史资源，探索其在八年级中国近代史教学中的运用策略，落实红色基因传承。</div><div class="at-meta">张阳春 · 2026年2月 · 约4200字</div></div></div>
+      </div>
+    </div>
+
+    <!-- READING (乡土资源) -->
+    <div class="tab-pane" id="pane-reading">
+      <!-- 子导航 -->
+      <div class="sub-tab-nav">
+        <button class="sub-tab-btn active" data-subtab="landmarks">🏛️ 名胜古迹</button>
+        <button class="sub-tab-btn" data-subtab="culture">🏅 状元文化</button>
+        <button class="sub-tab-btn" data-subtab="red">🔴 红色资源</button>
+        <button class="sub-tab-btn" data-subtab="folklore">🎭 民俗非遗</button>
+        <button class="sub-tab-btn" data-subtab="other">📂 其他</button>
+      </div>
+
+      <!-- 名胜古迹 -->
+      <div class="sub-pane active" id="subpane-landmarks">
+        <div class="local-grid">
+          <div class="local-card">
+            <div class="local-card-img" style="background:linear-gradient(135deg,#4A7C59,#6B9F78)">
+              <div style="font-size:38px">🏛️</div>
+            </div>
+            <div class="local-card-body">
+              <div class="local-card-title">百寿岩</div>
+              <div class="local-card-desc">位于永福县百寿镇，岩壁上有南宋至清代摩崖石刻百余幅，其中"寿"字碑最为著名，是永福福寿文化的重要载体。</div>
+              <div class="local-card-tags"><span class="tag">摩崖石刻</span><span class="tag">福寿文化</span></div>
+            </div>
+          </div>
+          <div class="local-card">
+            <div class="local-card-img" style="background:linear-gradient(135deg,#8B7355,#A0896C)">
+              <div style="font-size:38px">🏰</div>
+            </div>
+            <div class="local-card-body">
+              <div class="local-card-title">永宁州古城</div>
+              <div class="local-card-desc">始建于明代，是广西保存较为完整的古州城遗址之一。城墙、城门犹存，承载着永福数百年的行政与军事历史。</div>
+              <div class="local-card-tags"><span class="tag">明代古城</span><span class="tag">军事遗址</span></div>
+            </div>
+          </div>
+          <div class="local-card">
+            <div class="local-card-img" style="background:linear-gradient(135deg,#5B7FA4,#7D9FC0)">
+              <div style="font-size:38px">🌉</div>
+            </div>
+            <div class="local-card-body">
+              <div class="local-card-title">状元桥</div>
+              <div class="local-card-desc">相传与永福历史上的状元故事相关，是本地科举文化的象征性建筑，体现了永福崇文重教的优良传统。</div>
+              <div class="local-card-tags"><span class="tag">科举文化</span><span class="tag">历史传说</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 状元文化 -->
+      <div class="sub-pane" id="subpane-culture">
+        <div class="local-article">
+          <h3>永福状元历史</h3>
+          <p>永福历史文化底蕴深厚，崇文重教之风代代相传。据史料记载，永福在科举时代曾有学子高中状元，成为当地文教兴盛的见证。</p>
+          <p>本栏目将持续整理永福状元及进士、举人的相关史料，挖掘其中的励志故事与教育理念，为历史教学提供生动素材。</p>
+          <div class="local-placeholder">
+            <div style="font-size:36px;margin-bottom:8px">📚</div>
+            <div>更多状元文化资料整理中，欢迎老师们共同补充……</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 红色资源 -->
+      <div class="sub-pane" id="subpane-red">
+        <div class="local-article">
+          <h3>永福红色历史</h3>
+          <p>永福是一块红色热土，在新民主主义革命时期，永福儿女英勇奋斗，留下了许多可歌可泣的革命故事。</p>
+          <p>本栏目将系统梳理永福红色资源，包括红色遗址、革命人物、历史事件等，为初中历史教学中的红色教育提供乡土素材。</p>
+          <div class="local-placeholder">
+            <div style="font-size:36px;margin-bottom:8px">🔴</div>
+            <div>红色资源正在采集中，欢迎提供线索和资料……</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 民俗非遗 -->
+      <div class="sub-pane" id="subpane-folklore">
+        <div class="local-article">
+          <h3>永福民俗与非遗</h3>
+          <p>永福各民族世代聚居，形成了丰富多彩的民俗文化。彩调、壮族山歌、瑶族盘王节等非物质文化遗产，是永福历史文化的重要组成部分。</p>
+          <p>本栏目将介绍永福主要的民俗活动和非遗项目，帮助老师们在教学中融入多元文化视角，增强学生对家乡文化的认同感。</p>
+          <div class="local-placeholder">
+            <div style="font-size:36px;margin-bottom:8px">🎭</div>
+            <div>民俗非遗资料整理中，欢迎老师们分享采风成果……</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 其他 -->
+      <div class="sub-pane" id="subpane-other">
+        <div class="local-article">
+          <h3>其他乡土资料</h3>
+          <p>本栏目用于存放不便归入上述四类（名胜古迹、状元文化、红色资源、民俗非遗）的乡土资料，如口述历史记录、综合考察报告、跨类别素材等。</p>
+          <p>欢迎老师们上传各类乡土资源，我们将定期整理，将合适的内容归类至对应板块。</p>
+          <div class="local-placeholder">
+            <div style="font-size:36px;margin-bottom:8px">📂</div>
+            <div>资料上传功能开发中，将支持图片、文档、视频等格式……</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESEARCH (课题研究) -->
+    <div class="tab-pane" id="pane-research">
+      <div class="research-box">
+        <div class="research-badge">
+          <div class="rt">课题申报中</div>
+          <div class="rn">依托永福乡土资源，构建农村初中历史"学为中心"课堂的实践研究</div>
+          <div class="meta"><span>拟申报课题</span><span>2026年</span></div>
+        </div>
+        <div class="research-info">
+          <p>本课题立足<strong>永福县农村初中</strong>历史教学实际，以乡土资源为切入点，探索"学为中心"课堂的构建路径。</p>
+          <p>研究将<strong>乡土资源开发</strong>与<strong>课堂模式变革</strong>相结合，旨在形成一套可操作、可推广的农村初中历史教学范式，提升学生历史核心素养。</p>
+          <p>课题预计产出<strong>教学设计集、课例视频、研究论文、资源素材库</strong>等成果，服务全县历史教师。</p>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-date">2026年 · 计划</div><div class="tl-title">课题申报与立项</div><div class="tl-desc">完成课题申报材料，明确研究目标、内容与分工，争取立项。</div></div>
+            <div class="tl-item"><div class="tl-date">待定</div><div class="tl-title">开题论证与方案完善</div><div class="tl-desc">立项后开展开题论证，完善研究方案与实施计划。</div></div>
+            <div class="tl-item"><div class="tl-date">待定</div><div class="tl-title">乡土资源调研与课堂实践</div><div class="tl-desc">系统梳理永福乡土历史资源，开展"学为中心"课堂实践与课例打磨。</div></div>
+            <div class="tl-item"><div class="tl-date">待定</div><div class="tl-title">中期汇报与成果提炼</div><div class="tl-desc">完成中期汇报，形成教学设计集与阶段性论文，扩大推广范围。</div></div>
+            <div class="tl-item"><div class="tl-date">待定</div><div class="tl-title">课题结题与成果推广</div><div class="tl-desc">完成结题报告，汇编研究成果，开展县域推广与经验分享。</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div><!-- /tab-content -->
+      </div><!-- /tab-layout -->
+    </div><!-- /wrap -->
+  </section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div>
+      <h2>与我们共建历史课堂</h2>
+      <p>欢迎永福县及各地历史教育同仁交流合作，共享乡土资源，共研"学为中心"课堂。</p>
+    </div>
+    <div class="contact-info">
+      <div class="row"><span class="ico">🏫</span><div><div class="lbl">依托单位</div><div class="val">永福县教育局教学研究室</div></div></div>
+      <div class="row"><span class="ico">📍</span><div><div class="lbl">所在地区</div><div class="val">广西桂林市永福县</div></div></div>
+      <div class="row"><span class="ico">📚</span><div><div class="lbl">研究方向</div><div class="val">初中历史 · 乡土资源 · 学为中心</div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 永福历史教研工作室</span>
+    <span>依托永福乡土资源 · 构建"学为中心"历史课堂</span>
+  </div>
+</footer>
+
+<script>
+// mobile burger
+const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+// carousel — seamless infinite loop, left-to-right direction
+const totalSlides=7;
+const track=document.getElementById('carouselTrack');
+const dotsBox=document.getElementById('carouselDots');
+
+// Clone first & last slides for seamless looping
+const _slides=track.querySelectorAll('.slide');
+const _firstClone=_slides[0].cloneNode(true);
+const _lastClone=_slides[totalSlides-1].cloneNode(true);
+track.appendChild(_firstClone);
+track.insertBefore(_lastClone,_slides[0]);
+// Track now: [clone6, 0, 1, 2, 3, 4, 5, 6, clone0] — 9 items, positions 0-8
+
+let curPos=1; // start at real slide 0 (position 1)
+let isAnimating=false;
+
+// Set initial position without animation
+track.style.transition='none';
+track.style.transform='translateX(-100%)';
+track.offsetHeight; // force reflow
+
+// Create dots
+for(let i=0;i<totalSlides;i++){
+  const d=document.createElement('span');
+  if(i===0)d.className='active';
+  d.onclick=()=>{if(!isAnimating){curPos=i+1;moveTo();resetTimer();}};
+  dotsBox.appendChild(d);
+}
+const dots=dotsBox.querySelectorAll('span');
+
+let carouselTimer=setInterval(autoPlay,5000);
+
+function realIndex(){
+  if(curPos<=0)return totalSlides-1;
+  if(curPos>=totalSlides+1)return 0;
+  return curPos-1;
+}
+function moveTo(){
+  track.style.transition='transform .6s ease';
+  track.style.transform='translateX(-'+curPos*100+'%)';
+  dots.forEach((d,i)=>d.classList.toggle('active',i===realIndex()));
+}
+function jumpTo(){
+  track.style.transition='none';
+  track.style.transform='translateX(-'+curPos*100+'%)';
+  track.offsetHeight; // force reflow
+}
+function autoPlay(){
+  if(isAnimating)return;
+  isAnimating=true;
+  curPos--; // left-to-right: go backwards
+  moveTo();
+  setTimeout(()=>{
+    if(curPos===0){curPos=totalSlides;jumpTo();}
+    isAnimating=false;
+  },620);
+}
+function carouselSlide(dir){
+  if(isAnimating)return;
+  isAnimating=true;
+  curPos+=dir;
+  moveTo();
+  setTimeout(()=>{
+    if(curPos===0){curPos=totalSlides;jumpTo();}
+    else if(curPos===totalSlides+1){curPos=1;jumpTo();}
+    isAnimating=false;
+  },620);
+  resetTimer();
+}
+function resetTimer(){clearInterval(carouselTimer);carouselTimer=setInterval(autoPlay,5000);}
+document.getElementById('carousel').addEventListener('mouseenter',()=>clearInterval(carouselTimer));
+document.getElementById('carousel').addEventListener('mouseleave',()=>resetTimer());
+
+// 触摸滑动支持
+let touchStartX=0,touchEndX=0;
+const carouselEl=document.getElementById('carousel');
+carouselEl.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
+carouselEl.addEventListener('touchend',e=>{
+  touchEndX=e.changedTouches[0].screenX;
+  const diff=touchStartX-touchEndX;
+  if(Math.abs(diff)>40){carouselSlide(diff>0?1:-1);}
+},{passive:true});
+
+// tab switching
+const tabBtns=document.querySelectorAll('.tab-btn');
+const panes=document.querySelectorAll('.tab-pane');
+function goTab(name){
+  tabBtns.forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+  panes.forEach(p=>p.classList.toggle('active',p.id==='pane-'+name));
+  document.getElementById('tabNav').scrollIntoView({behavior:'smooth',block:'start'});
+}
+tabBtns.forEach(btn=>btn.addEventListener('click',()=>goTab(btn.dataset.tab)));
+
+// resource filter
+const filterBtns=document.querySelectorAll('.filter-btn');
+const resCards=document.querySelectorAll('#resGrid .res-card');
+filterBtns.forEach(btn=>btn.addEventListener('click',()=>{
+  filterBtns.forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const f=btn.dataset.filter;
+  resCards.forEach(c=>{c.style.display=(f==='all'||c.dataset.type===f)?'':'none'});
+}));
+
+// 乡土资源子Tab切换
+const subTabBtns=document.querySelectorAll('#pane-reading .sub-tab-btn');
+const subPanes=document.querySelectorAll('#pane-reading .sub-pane');
+subTabBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    subTabBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const target=btn.dataset.subtab;
+    subPanes.forEach(p=>p.classList.toggle('active',p.id==='subpane-'+target));
+  });
+});
+
+// 手机端团队风采浮动标题：滚动时固定显示
+const teamFloatHead=document.getElementById('teamFloatHead');
+const teamPanelEl=document.getElementById('teamPanel');
+const teamPanelHeadEl=document.getElementById('teamPanelHead');
+function updateTeamFloat(){
+  if(window.innerWidth>880){teamFloatHead.style.display='none';return;}
+  const panelRect=teamPanelEl.getBoundingClientRect();
+  const headRect=teamPanelHeadEl.getBoundingClientRect();
+  const navH=window.innerWidth<=480?54:60;
+  // 当原始标题滚出导航栏上方，且团队面板底部还在屏幕内时，显示浮动标题
+  if(headRect.bottom < navH && panelRect.bottom > navH){
+    teamFloatHead.style.display='block';
+  }else{
+    teamFloatHead.style.display='none';
+  }
+}
+window.addEventListener('scroll',updateTeamFloat,{passive:true});
+window.addEventListener('resize',updateTeamFloat);
+// search
+const searchInput=document.getElementById('searchInput');
+function doSearch(){
+  const q=searchInput.value.trim();
+  if(!q)return;
+  window.location.href='search.html?q='+encodeURIComponent(q);
+}
+updateTeamFloat();
+
+// brief expand/collapse
+const briefText=document.getElementById('briefText');
+const briefToggle=document.getElementById('briefToggle');
+function toggleBrief(){
+  briefText.classList.toggle('expanded');
+  briefToggle.innerHTML=briefText.classList.contains('expanded')?'收起 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>':'展开更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>';
+}
+// auto-update stats
+function updateStats(){
+  // 教研团队：统计有onclick的真实成员（排除预留位）
+  const teamCount=document.querySelectorAll('.tp-member[onclick]').length;
+  document.getElementById('stat-team').textContent=teamCount;
+  // 申报课题：统计research-badge数量
+  const researchCount=document.querySelectorAll('.research-badge').length;
+  document.getElementById('stat-research').textContent=researchCount;
+  // 教学资源：统计res-card数量
+  const resourceCount=document.querySelectorAll('#resGrid .res-card').length;
+  document.getElementById('stat-resource').textContent=resourceCount;
+  // 教研活动：统计news-card数量（教研动态）
+  const activityCount=document.querySelectorAll('#pane-news .news-card').length;
+  document.getElementById('stat-activity').textContent=activityCount;
+}
+updateStats();
+
+</script>
+</body>
+</html>
