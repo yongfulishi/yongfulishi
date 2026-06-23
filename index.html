@@ -212,6 +212,7 @@ a{color:inherit;text-decoration:none}
 .res-icon.t-courseware{background:var(--amber-bg);color:var(--amber)}
 .res-icon.t-task{background:#E6F1FB;color:#185FA5}
 .res-icon.t-material{background:#FBEAF0;color:#993556}
+.res-icon.t-exam{background:#F3E8FF;color:#6B5BFF}
 .res-type{font-size:10.5px;color:var(--muted);background:var(--bg);padding:2px 8px;border-radius:8px;font-weight:500}
 .res-title{font-weight:600;font-size:14px;margin-bottom:6px;line-height:1.5}
 .res-desc{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:12px}
@@ -585,7 +586,7 @@ a{color:inherit;text-decoration:none}
   <div class="info-inner">
     <div class="brief-box">
       <span class="brief-tag">工作室简介</span>
-      <p class="brief-text" id="briefText">永福历史教研工作室（共研互促工作室）在<strong>永福县教育局教学研究室</strong>指导下成立，由县教研室历史教研员<strong>张阳春</strong>主持。工作室汇聚来自永福县第一中学、湾里初级中学、永安初级中学、罗锦初级中学、堡里初级中学、百寿初级中学、月山初级中学等多所学校的优秀历史教师，其中多数是充满活力的青年教师。他们业务精湛、年轻有为，是永福县初中历史教学的骨干力量，整个团队朝气蓬勃、积极向上，怀揣着对历史教育的热忱，共同扎根课堂、深耕教研。工作室以<strong>"学为中心"</strong>为核心理念，积极依托永福本土资源——百寿岩、永宁州古城、状元文化、红色记忆与民俗非遗，将乡土史料转化为鲜活的教学素材，推动农村初中历史课堂扎根落地。目前，工作室正积极申报课题<strong>《依托永福乡土资源，构建农村初中历史"学为中心"课堂的实践研究》</strong>，以研促教、以教带研，带动全县历史教师专业成长。</p>
+      <p class="brief-text" id="briefText">永福历史教研工作室（共研互促工作室）在<strong>永福县教育局教学研究室</strong>指导下成立，由县教研室历史教研员<strong>张阳春</strong>主持。工作室汇聚来自永福县第一初级中学、湾里初级中学、永安初级中学、罗锦初级中学、堡里初级中学、百寿初级中学、月山初级中学等多所学校的优秀历史教师，其中多数是充满活力的青年教师。他们业务精湛、年轻有为，是永福县初中历史教学的骨干力量，整个团队朝气蓬勃、积极向上，怀揣着对历史教育的热忱，共同扎根课堂、深耕教研。工作室以<strong>"学为中心"</strong>为核心理念，积极依托永福本土资源——百寿岩、永宁州古城、状元文化、红色记忆与民俗非遗，将乡土史料转化为鲜活的教学素材，推动农村初中历史课堂扎根落地。目前，工作室正积极申报课题<strong>《依托永福乡土资源，构建农村初中历史"学为中心"课堂的实践研究》</strong>，以研促教、以教带研，带动全县历史教师专业成长。</p>
       <button class="brief-toggle" onclick="toggleBrief()" id="briefToggle">展开更多 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
     </div>
     <div class="notice-box">
@@ -727,17 +728,17 @@ a{color:inherit;text-decoration:none}
             <div class="tp-name">廖宏倩</div>
             <div class="tp-role">骨干成员</div>
           </div>
-          <!-- 预留位 -->
-          <div class="tp-member" style="opacity:.5;border-style:dashed">
-            <div class="tp-avatar a4" style="background:#E5DED4;color:#999">＋</div>
-            <div class="tp-name" style="color:#999">待加入</div>
-            <div class="tp-role" style="color:#bbb">预留位</div>
+          <div class="tp-member" onclick="window.location.href='profile-qin.html'" style="cursor:pointer">
+            <div class="tp-avatar a6"><img src="images/qin.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center"></div>
+            <div class="tp-name">秦群芳</div>
+            <div class="tp-role">骨干成员</div>
           </div>
-          <div class="tp-member" style="opacity:.5;border-style:dashed">
-            <div class="tp-avatar a5" style="background:#E5DED4;color:#999">＋</div>
-            <div class="tp-name" style="color:#999">待加入</div>
-            <div class="tp-role" style="color:#bbb">预留位</div>
+          <div class="tp-member" onclick="window.location.href='profile-cui.html'" style="cursor:pointer">
+            <div class="tp-avatar a6"><img src="images/cui.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center"></div>
+            <div class="tp-name">崔文丹</div>
+            <div class="tp-role">骨干成员</div>
           </div>
+          <!-- 预留位已隐藏，新成员在"查看全部成员"中展示 -->
         </div>
         <div class="team-panel-foot" style="padding:0">
           <a href="team-all.html" style="display:block;text-align:center;padding:10px 8px;background:var(--teal-bg);color:var(--teal);border-radius:8px;text-decoration:none;font-size:13.5px;font-weight:600;transition:.2s" onmouseover="this.style.background='var(--teal)';this.style.color='#fff'" onmouseout="this.style.background='var(--teal-bg)';this.style.color='var(--teal)'">查看全部成员 →</a>
@@ -795,18 +796,20 @@ a{color:inherit;text-decoration:none}
     <div class="tab-pane" id="pane-resources">
       <div class="res-filter" id="resFilter">
         <button class="filter-btn active" data-filter="all">全部资源</button>
+        <button class="filter-btn" data-filter="task">教研资料</button>
         <button class="filter-btn" data-filter="design">教学设计</button>
         <button class="filter-btn" data-filter="courseware">课件</button>
-        <button class="filter-btn" data-filter="task">学习任务单</button>
-        <button class="filter-btn" data-filter="material">乡土素材包</button>
+        <button class="filter-btn" data-filter="material">电子课本</button>
+        <button class="filter-btn" data-filter="exam">各类试卷</button>
       </div>
       <div class="res-grid" id="resGrid">
         <div class="res-card" data-type="design"><div class="res-top"><div class="res-icon t-design">📝</div><span class="res-type">教学设计</span></div><div class="res-title">《永福状元文化与科举》教学设计</div><div class="res-desc">融合永福状元文化史料，设计"学为中心"的探究式学习活动，含课时目标与活动流程。</div><div class="res-foot"><span class="res-meta">八年级 · <b>1课时</b></span><span class="res-dl">下载 ↓</span></div></div>
         <div class="res-card" data-type="courseware"><div class="res-top"><div class="res-icon t-courseware">📊</div><span class="res-type">课件</span></div><div class="res-title">百寿岩与永福寿文化 PPT 课件</div><div class="res-desc">图文并茂呈现百寿岩"寿"字文化，配套课堂互动问题，可直接用于课堂教学。</div><div class="res-foot"><span class="res-meta">七年级 · <b>42页</b></span><span class="res-dl">下载 ↓</span></div></div>
-        <div class="res-card" data-type="task"><div class="res-top"><div class="res-icon t-task">📋</div><span class="res-type">学习任务单</span></div><div class="res-title">永宁州古城探究学习任务单</div><div class="res-desc">以永宁州古城为情境，设计小组合作探究任务，引导学生"做中学"。</div><div class="res-foot"><span class="res-meta">八年级 · <b>小组合作</b></span><span class="res-dl">下载 ↓</span></div></div>
-        <div class="res-card" data-type="material"><div class="res-top"><div class="res-icon t-material">🗺️</div><span class="res-type">乡土素材包</span></div><div class="res-title">永福红色记忆史料素材包</div><div class="res-desc">整理永福革命历史图文资料，按主题分类，为教师开发红色历史课例提供素材支撑。</div><div class="res-foot"><span class="res-meta">通用 · <b>含图片</b></span><span class="res-dl">下载 ↓</span></div></div>
+        <div class="res-card" data-type="task"><div class="res-top"><div class="res-icon t-task">📋</div><span class="res-type">教研资料</span></div><div class="res-title">永宁州古城探究学习任务单</div><div class="res-desc">以永宁州古城为情境，设计小组合作探究任务，引导学生"做中学"。</div><div class="res-foot"><span class="res-meta">八年级 · <b>小组合作</b></span><span class="res-dl">下载 ↓</span></div></div>
+        <div class="res-card" data-type="material"><div class="res-top"><div class="res-icon t-material">📕</div><span class="res-type">电子课本</span></div><div class="res-title">初中历史电子课本（七年级上册）</div><div class="res-desc">部编版初中历史七年级上册电子课本，方便教师备课参考与学生预习复习使用。</div><div class="res-foot"><span class="res-meta">七年级 · <b>PDF版</b></span><span class="res-dl">下载 ↓</span></div></div>
         <div class="res-card" data-type="design"><div class="res-top"><div class="res-icon t-design">📝</div><span class="res-type">教学设计</span></div><div class="res-title">《永福往事》单元主题教学设计</div><div class="res-desc">以永福地方史为线索的跨课时主题设计，体现乡土资源与大单元教学融合。</div><div class="res-foot"><span class="res-meta">九年级 · <b>3课时</b></span><span class="res-dl">下载 ↓</span></div></div>
         <div class="res-card" data-type="courseware"><div class="res-top"><div class="res-icon t-courseware">📊</div><span class="res-type">课件</span></div><div class="res-title">"学为中心"课堂模式概览课件</div><div class="res-desc">面向教师培训，系统介绍"学为中心"历史课堂的操作要素与实施策略。</div><div class="res-foot"><span class="res-meta">教师培训 · <b>36页</b></span><span class="res-dl">下载 ↓</span></div></div>
+        <div class="res-card" data-type="exam"><div class="res-top"><div class="res-icon t-exam">📝</div><span class="res-type">各类试卷</span></div><div class="res-title">永福县初中历史期中质量检测卷</div><div class="res-desc">立足永福乡土史料，融合"学为中心"理念，注重考查学生的历史思维与家国情怀素养。</div><div class="res-foot"><span class="res-meta">七年级 · <b>Word版</b></span><span class="res-dl">下载 ↓</span></div></div>
       </div>
     </div>
 
