@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全体成员 - 永福历史教研工作室</title>
+
+<style>
+:root{
+  --teal:#0F6E56;
+  --teal-light:#1A8B6E;
+  --teal-bg:#EEF6F3;
+  --amber:#BA7517;
+  --amber-light:#D4923A;
+  --amber-bg:#FFF7EB;
+  --ink:#1A1A1A;
+  --muted:#6B7280;
+  --line:#E5DED4;
+  --bg:#FAF8F5;
+  --card:#FFFFFF;
+  --maxw:1160px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC','Microsoft YaHei','微软雅黑',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* 导航 */
+.nav-bar{background:#111;color:#ccc;padding:10px 0;font-size:14px}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;gap:20px;align-items:center}
+.nav-bar a{color:#ccc;text-decoration:none;transition:.2s}
+.nav-bar a:hover{color:#fff}
+.nav-logo{font-weight:700;color:#fff;letter-spacing:1px;margin-right:auto}
+
+/* 页面头部 */
+.page-header{background:linear-gradient(135deg,var(--teal),var(--teal-light));padding:44px 24px 36px;text-align:center;color:#fff}
+.page-header h1{font-family:'Noto Serif SC','SimSun','宋体',serif;font-size:30px;font-weight:700;margin-bottom:8px}
+.page-header p{font-size:15px;opacity:.88}
+
+/* 主体 */
+.page-body{max-width:var(--maxw);margin:0 auto;padding:36px 24px 56px}
+
+/* 成员网格 */
+.member-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:22px}
+
+.member-card{background:var(--card);border-radius:14px;padding:28px 20px;text-align:center;border:0.5px solid var(--line);transition:.25s;cursor:pointer;text-decoration:none;color:inherit;display:block}
+.member-card:hover{border-color:var(--teal-light);box-shadow:0 6px 20px rgba(8,80,65,.1);transform:translateY(-2px)}
+.member-card.lead{border-color:rgba(239,159,39,.35);background:var(--amber-bg)}
+.member-card.lead:hover{border-color:var(--amber)}
+
+.mc-avatar{width:88px;height:88px;border-radius:50%;margin:0 auto 14px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#E5DED4}
+.mc-avatar img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.mc-avatar.has-text{font-family:'Noto Serif SC','SimSun','宋体',serif;font-size:30px;font-weight:600;color:#fff}
+.mc-name{font-family:'Noto Serif SC','SimSun','宋体',serif;font-size:18px;font-weight:700;margin-bottom:4px}
+.mc-role{font-size:13px;color:var(--muted);margin-bottom:6px}
+.mc-school{font-size:12.5px;color:#999}
+
+/* 预留位 */
+.member-card.placeholder{opacity:.5;border-style:dashed;cursor:default}
+.member-card.placeholder:hover{transform:none;box-shadow:none;border-color:var(--line)}
+.member-card.placeholder .mc-avatar{background:#E5DED4;color:#aaa;font-size:32px}
+
+/* 分隔标题 */
+.section-title{font-family:'Noto Serif SC','SimSun','宋体',serif;font-size:20px;font-weight:700;color:var(--teal);margin:36px 0 20px;display:flex;align-items:center;gap:10px}
+.section-title::before{content:'';width:5px;height:22px;background:var(--teal);border-radius:3px}
+.section-title:first-child{margin-top:0}
+
+/* 底部 */
+.page-footer{text-align:center;padding:28px 24px;color:var(--muted);font-size:13.5px}
+
+@media(max-width:640px){
+  .nav-inner{padding:0 16px;gap:12px}
+  .nav-logo{font-size:13px}
+  .page-header{padding:32px 20px 28px}
+  .page-header h1{font-size:24px}
+  .page-header p{font-size:13px}
+  .page-body{padding:24px 16px 40px}
+  .member-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .member-card{padding:20px 14px}
+  .mc-avatar{width:72px;height:72px;margin-bottom:10px}
+  .mc-name{font-size:16px}
+  .mc-role{font-size:12px}
+  .mc-school{font-size:11.5px}
+  .section-title{font-size:18px;margin:28px 0 16px}
+}
+
+@media(max-width:480px){
+  .nav-logo{font-size:12px}
+  .nav-inner{padding:0 14px;gap:10px}
+  .page-header{padding:26px 16px 22px}
+  .page-header h1{font-size:20px}
+  .page-body{padding:20px 14px 36px}
+  .member-grid{grid-template-columns:1fr;gap:12px}
+  .member-card{padding:18px 16px;display:flex;align-items:center;gap:14px;text-align:left}
+  .mc-avatar{width:60px;height:60px;margin:0;flex-shrink:0}
+  .mc-name{font-size:15px;margin-bottom:2px}
+  .mc-role{font-size:12px;margin-bottom:2px}
+  .mc-school{font-size:11px}
+  .section-title{font-size:16px;margin:24px 0 14px}
+  .page-footer{padding:20px 16px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- 导航 -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <span class="nav-logo">永福历史教研工作室</span>
+    <a href="index.html">← 返回首页</a>
+  </div>
+</nav>
+
+<!-- 页头 -->
+<div class="page-header">
+  <h1>工作室全体成员</h1>
+  <p>永福县历史学科教研团队 · 深耕乡土 · 学为中心</p>
+</div>
+
+<!-- 主体 -->
+<div class="page-body">
+
+  <div class="section-title">工作室主持人</div>
+  <div class="member-grid">
+    <a class="member-card lead" href="profile-zhang.html">
+      <div class="mc-avatar">
+        <img src="images/avatar-zhang.jpg" alt="">
+      </div>
+      <div class="mc-name">张阳春</div>
+      <div class="mc-role">工作室主持人 · 高级教师</div>
+      <div class="mc-school">永福县教研室 · 历史教研员</div>
+    </a>
+  </div>
+
+  <div class="section-title">骨干成员</div>
+  <div class="member-grid">
+    <a class="member-card" href="profile-wei.html">
+      <div class="mc-avatar">
+        <img src="images/avatar-wei.jpg" alt="">
+      </div>
+      <div class="mc-name">韦荣明</div>
+      <div class="mc-role">骨干成员 · 中小学一级教师</div>
+      <div class="mc-school">Intel未来教育讲师 · 历史试题研究小组成员</div>
+    </a>
+
+    <a class="member-card" href="profile-liang.html">
+      <div class="mc-avatar">
+        <img src="images/avatar-liang.jpg" alt="">
+      </div>
+      <div class="mc-name">梁进明</div>
+      <div class="mc-role">骨干成员 · 二级教师</div>
+      <div class="mc-school">永福镇湾里初级中学 · 历史教师</div>
+    </a>
+
+    <a class="member-card" href="profile-zeng.html">
+      <div class="mc-avatar">
+        <img src="images/avatar-zeng.jpg" alt="">
+      </div>
+      <div class="mc-name">曾学秀</div>
+      <div class="mc-role">骨干成员 · 中小学一级教师</div>
+      <div class="mc-school">永安乡永安初级中学 · 政教主任</div>
+    </a>
+
+    <a class="member-card" href="profile-zhou.html">
+      <div class="mc-avatar">
+        <img src="images/avatar-zhou.jpg" alt="">
+      </div>
+      <div class="mc-name">周玮</div>
+      <div class="mc-role">骨干成员 · 青年历史教师</div>
+      <div class="mc-school">教学质量一等奖 · 优秀班主任</div>
+    </a>
+
+    <a class="member-card" href="profile-tang.html">
+      <div class="mc-avatar">
+        <img src="images/avatar-tang.jpg" alt="">
+      </div>
+      <div class="mc-name">唐燕山</div>
+      <div class="mc-role">骨干成员 · 中小学一级教师</div>
+      <div class="mc-school">罗锦镇罗锦初级中学 · 政教处主任</div>
+    </a>
+
+    <a class="member-card" href="profile-liao.html">
+      <div class="mc-avatar">
+        <img src="images/avatar-liao.jpg" alt="">
+      </div>
+      <div class="mc-name">廖宏倩</div>
+      <div class="mc-role">骨干成员 · 中共党员</div>
+      <div class="mc-school">永福县第一初级中学 · 历史教师</div>
+    </a>
+  </div>
+
+</div>
+
+<div class="page-footer">
+  永福历史教研工作室 · 团队持续壮大中，欢迎更多老师加入
+</div>
+
+</body>
+</html>
