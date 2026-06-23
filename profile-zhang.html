@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张阳春 - 工作室主持人 - 永福历史教研工作室</title>
+<style>
+:root{
+  --teal-dark:#085041; --teal:#0F6E56; --teal-mid:#1D9E75; --teal-light:#5DCAA5; --teal-bg:#E1F5EE;
+  --amber:#BA7517; --amber-light:#EF9F27; --amber-bg:#FAEEDA;
+  --ink:#2C2C2A; --muted:#6B6A65; --line:#E8E7E1; --bg:#FAF9F6; --white:#FFF;
+  --serif:'Noto Serif SC','SimSun','宋体',serif; --sans:'Noto Sans SC','Microsoft YaHei','微软雅黑',sans-serif;
+  --maxw:1160px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.75;font-size:15px}
+a{color:inherit;text-decoration:none}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.94);backdrop-filter:blur(10px);border-bottom:0.5px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-back{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:var(--teal);font-weight:500;cursor:pointer;transition:color .2s}
+.nav-back:hover{color:var(--teal-dark)}
+
+/* ===== PROFILE HERO ===== */
+.profile-hero{margin-top:60px;background:linear-gradient(135deg,#0A4033,#0F6E56,#0D7B5E);color:#fff;position:relative;overflow:hidden;padding:44px 24px 40px}
+.profile-hero::before{content:"";position:absolute;top:-20%;left:-8%;width:350px;height:350px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.05),transparent 60%);pointer-events:none}
+.profile-hero::after{content:"";position:absolute;bottom:-30%;right:-8%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(239,159,39,.07),transparent 60%);pointer-events:none}
+.profile-hero-inner{position:relative;z-index:2;max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:28px}
+.profile-avatar-wrap{width:96px;height:96px;border-radius:50%;border:4px solid rgba(255,255,255,.35);overflow:hidden;flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.18)}
+.profile-avatar-wrap img{width:100%;height:100%;object-fit:cover}
+.profile-hero-text{flex:1}
+.profile-name{font-family:var(--serif);font-size:26px;font-weight:700;margin-bottom:4px}
+.profile-role{font-size:15px;color:rgba(255,255,255,.78);margin-bottom:4px}
+.profile-unit{font-size:13px;color:rgba(255,255,255,.55)}
+.profile-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.profile-badge{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);padding:3px 12px;border-radius:20px;font-size:12px;color:rgba(255,255,255,.88)}
+
+/* ===== MAIN LAYOUT ===== */
+.profile-main{max-width:var(--maxw);margin:0 auto;padding:28px 24px 48px;display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start}
+
+/* ===== LEFT COLUMN ===== */
+.left-col{display:flex;flex-direction:column;gap:20px;position:sticky;top:76px}
+
+/* 个人简介卡片 */
+.bio-card{background:var(--white);border-radius:14px;padding:24px 22px;border:0.5px solid var(--line)}
+.card-title{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--teal-dark);margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--teal-bg);display:flex;align-items:center;gap:7px}
+.card-title::before{content:"";width:4px;height:16px;background:var(--teal);border-radius:2px}
+.bio-text{font-size:14px;line-height:1.95;color:var(--ink);text-align:justify}
+.bio-text strong{color:var(--teal-dark)}
+.bio-quote{background:#FAF6EF;border-left:4px solid var(--amber);border-radius:0 10px 10px 0;padding:14px 16px;margin-top:14px;font-style:italic;color:var(--amber-dark);font-size:13.5px;line-height:1.7}
+.bio-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.bio-tag{background:var(--teal-bg);color:var(--teal-dark);padding:4px 10px;border-radius:20px;font-size:12px;font-weight:500}
+
+/* 统计卡片 */
+.stats-card{background:var(--white);border-radius:14px;padding:24px 22px;border:0.5px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
+.stat-item{text-align:center;background:linear-gradient(135deg,#F8FBFA,#F2F7F4);border-radius:10px;padding:14px 8px;border:0.5px solid var(--line)}
+.stat-num{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--teal);line-height:1.2}
+.stat-num small{font-size:12px;font-weight:400;color:var(--muted);margin-left:1px}
+.stat-lbl{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* 环形图 */
+.donut-wrap{display:flex;align-items:center;gap:14px;margin-top:6px}
+.donut-chart{width:110px;height:110px;flex-shrink:0}
+.donut-center{text-anchor:middle;fill:#2C2C2A}
+.chart-legend{flex:1}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:12px;margin-bottom:6px;color:var(--ink)}
+.legend-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.legend-count{margin-left:auto;color:var(--muted);font-size:11px}
+
+/* ===== RIGHT COLUMN ===== */
+.right-col{min-width:0}
+.right-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:12px;border-bottom:0.5px solid var(--line)}
+.right-title{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink)}
+.right-count{font-size:13px;color:var(--muted);background:var(--teal-bg);padding:3px 12px;border-radius:20px;color:var(--teal-dark)}
+
+/* 文章筛选标签 */
+.filter-tags{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+.filter-tag{padding:5px 14px;border-radius:20px;font-size:13px;cursor:pointer;border:1px solid var(--line);background:var(--white);color:var(--muted);transition:all .2s}
+.filter-tag:hover{border-color:var(--teal-light);color:var(--teal)}
+.filter-tag.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* 文章列表 */
+.article-list{display:flex;flex-direction:column;gap:14px}
+.article-item{display:flex;gap:16px;padding:20px;background:var(--white);border-radius:12px;border:0.5px solid var(--line);cursor:pointer;transition:all .2s;align-items:flex-start}
+.article-item:hover{border-color:var(--teal-light);box-shadow:0 2px 12px rgba(15,110,86,.08)}
+.article-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.article-icon.doc{background:var(--teal-bg)}
+.article-icon.ppt{background:var(--amber-bg)}
+.article-icon.video{background:#EAF1FE;color:#3B6FE0}
+.article-info{flex:1;min-width:0}
+.article-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px;transition:color .2s}
+.article-item:hover .article-title{color:var(--teal)}
+.article-excerpt{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:8px}
+.article-meta{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted)}
+.article-meta span{display:inline-flex;align-items:center;gap:3px}
+.article-tag{background:var(--teal-bg);color:var(--teal-dark);padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500}
+.article-tag.amber{background:var(--amber-bg);color:var(--amber)}
+
+@media(max-width:860px){
+  .profile-main{grid-template-columns:1fr;padding:20px 16px 40px}
+  .left-col{position:static}
+  .profile-hero{padding:36px 20px 32px}
+  .profile-hero-inner{flex-direction:column;text-align:center;gap:18px}
+  .profile-avatar-wrap{width:80px;height:80px}
+  .profile-name{font-size:23px}
+  .profile-badges{justify-content:center}
+  .article-item{padding:16px;gap:12px}
+  .article-icon{width:38px;height:38px;font-size:16px}
+  .article-title{font-size:14px}
+  .article-excerpt{font-size:12.5px}
+  .filter-tags{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch}
+  .filter-tags::-webkit-scrollbar{height:0}
+  .filter-tag{white-space:nowrap}
+  .donut-wrap{flex-direction:column;align-items:center;text-align:center}
+  .chart-legend{width:100%}
+  .legend-item{justify-content:flex-start}
+}
+
+@media(max-width:480px){
+  .nav-inner{padding:0 16px;height:54px}
+  .profile-hero{margin-top:54px;padding:28px 16px 24px}
+  .profile-avatar-wrap{width:70px;height:70px}
+  .profile-name{font-size:20px}
+  .profile-role{font-size:13px}
+  .profile-unit{font-size:12px}
+  .profile-badge{font-size:11px;padding:2px 10px}
+  .profile-main{padding:16px 14px 36px}
+  .bio-card{padding:18px 16px}
+  .stats-card{padding:18px 16px}
+  .card-title{font-size:15px}
+  .bio-text{font-size:13px;line-height:1.85}
+  .bio-tag{font-size:11px;padding:3px 8px}
+  .stats-grid{gap:8px}
+  .stat-item{padding:10px 6px}
+  .stat-num{font-size:22px}
+  .stat-num small{font-size:11px}
+  .stat-lbl{font-size:11px}
+  .donut-chart{width:90px;height:90px}
+  .legend-item{font-size:11px}
+  .right-title{font-size:16px}
+  .article-item{padding:14px;gap:10px}
+  .article-icon{width:34px;height:34px;font-size:15px}
+  .article-title{font-size:13.5px}
+  .article-excerpt{font-size:12px}
+  .article-meta{font-size:11px;gap:8px}
+  .article-tag{font-size:10.5px;padding:1px 7px}
+  .filter-tag{padding:5px 12px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-back" onclick="window.location.href='index.html'">← 返回首页</a>
+    <span style="font-size:13px;color:var(--muted)">永福历史教研工作室</span>
+  </div>
+</nav>
+
+<!-- PROFILE HERO -->
+<header class="profile-hero">
+  <div class="profile-hero-inner">
+    <div class="profile-avatar-wrap"><img src="images/avatar-zhang.jpg" alt=""></div>
+    <div class="profile-hero-text">
+      <h1 class="profile-name">张阳春</h1>
+      <p class="profile-role">永福历史教研工作室 · 主持人</p>
+      <p class="profile-unit">永福县教育局教学研究室 · 历史学科教研员</p>
+      <div class="profile-badges">
+        <span class="profile-badge">中小学高级教师</span>
+        <span class="profile-badge">永福县首批学科带头人</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- MAIN: LEFT + RIGHT -->
+<div class="profile-main">
+
+  <!-- ===== LEFT COLUMN ===== -->
+  <div class="left-col">
+
+    <!-- 个人简介 -->
+    <div class="bio-card">
+      <div class="card-title">个人简介</div>
+      <p class="bio-text">中小学高级教师，永福县首批学科带头人，现任永福县教育局教学研究室历史学科教研员。</p>
+      <p class="bio-text" style="margin-top:10px">从教以来始终扎根一线，深耕课堂，先后荣获<strong>永福县优秀教师</strong>、<strong>优秀教育工作者</strong>等多项荣誉。主持或参与多项市县级课题研究，具备扎实的教研能力。</p>
+      <p class="bio-text" style="margin-top:10px">作为工作室主持人，致力于带领全县历史教师团队聚焦乡土资源开发与"学为中心"课堂构建，推动农村初中历史教学改革。</p>
+      <div class="bio-quote">"教研之路，不在高远，而在每一步踏实的课堂里。"</div>
+      <div class="bio-tags">
+        <span class="bio-tag">历史学科教研员</span>
+        <span class="bio-tag">高级教师</span>
+        <span class="bio-tag">课题研究</span>
+        <span class="bio-tag">乡土资源开发</span>
+      </div>
+    </div>
+
+    <!-- 教学成果统计 -->
+    <div class="stats-card">
+      <div class="card-title">教学成果统计</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num">6<small>篇</small></div>
+          <div class="stat-lbl">发表文章</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">12<small>份</small></div>
+          <div class="stat-lbl">教学设计/课件</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3<small>项</small></div>
+          <div class="stat-lbl">课题研究</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">8<small>场</small></div>
+          <div class="stat-lbl">培训讲座</div>
+        </div>
+      </div>
+
+      <!-- 环形图 -->
+      <div class="donut-wrap">
+        <svg viewBox="0 0 100 100" class="donut-chart">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#EAEAE4" stroke-width="13"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#0F6E56" stroke-width="13"
+                  stroke-dasharray="75.4 251.33" stroke-dashoffset="0" transform="rotate(-90 50 50)"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#1D9E75" stroke-width="13"
+                  stroke-dasharray="62.83 251.33" stroke-dashoffset="-75.4" transform="rotate(-90 50 50)"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#5DCAA5" stroke-width="13"
+                  stroke-dasharray="45.24 251.33" stroke-dashoffset="-138.23" transform="rotate(-90 50 50)"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#BA7517" stroke-width="13"
+                  stroke-dasharray="37.7 251.33" stroke-dashoffset="-183.47" transform="rotate(-90 50 50)"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#EF9F27" stroke-width="13"
+                  stroke-dasharray="30.16 251.33" stroke-dashoffset="-221.17" transform="rotate(-90 50 50)"/>
+          <text x="50" y="48" text-anchor="middle" font-family="'Noto Serif SC','SimSun','宋体',serif" font-size="16" font-weight="700" class="donut-center">34</text>
+          <text x="50" y="60" text-anchor="middle" font-size="8" fill="#6B6A65">成果</text>
+        </svg>
+        <div class="chart-legend">
+          <div class="legend-item"><span class="legend-dot" style="background:#0F6E56"></span> 教学论文 <span class="legend-count">6</span></div>
+          <div class="legend-item"><span class="legend-dot" style="background:#1D9E75"></span> 教学设计/课件 <span class="legend-count">12</span></div>
+          <div class="legend-item"><span class="legend-dot" style="background:#5DCAA5"></span> 培训讲座 <span class="legend-count">8</span></div>
+          <div class="legend-item"><span class="legend-dot" style="background:#BA7517"></span> 课题研究 <span class="legend-count">3</span></div>
+          <div class="legend-item"><span class="legend-dot" style="background:#EF9F27"></span> 乡土调研 <span class="legend-count">5</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== RIGHT COLUMN ===== -->
+  <div class="right-col">
+    <div class="right-header">
+      <div class="right-title">我的发布</div>
+      <span class="right-count">共 6 篇</span>
+    </div>
+
+    <!-- 筛选标签 -->
+    <div class="filter-tags">
+      <div class="filter-tag active" data-filter="all">全部</div>
+      <div class="filter-tag" data-filter="article">教学文章</div>
+      <div class="filter-tag" data-filter="courseware">培训课件</div>
+      <div class="filter-tag" data-filter="design">教学设计</div>
+    </div>
+
+    <!-- 文章列表 -->
+    <div class="article-list">
+
+      <div class="article-item" data-type="article" onclick="window.location.href='fakanji.html'">
+        <div class="article-icon doc">📄</div>
+        <div class="article-info">
+          <div class="article-title">让历史在乡土中生长——写在永福历史教研工作室网站上线之际</div>
+          <div class="article-excerpt">发刊词：阐述工作室创办初心与使命愿景，提出让乡土资源走进课堂、"学为中心"落地生根、教师在研究中成长的三大目标。</div>
+          <div class="article-meta">
+            <span class="article-tag">发刊词</span>
+            <span>📅 2026年6月</span>
+            <span>📝 约3200字</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-item" data-type="article">
+        <div class="article-icon doc">📄</div>
+        <div class="article-info">
+          <div class="article-title">乡土资源融入农村初中历史课堂的实践与思考</div>
+          <div class="article-excerpt">以永福百寿岩、状元文化为例，探讨如何将乡土资源有效融入历史课堂教学，激发学生学习兴趣，培育家国情怀素养。</div>
+          <div class="article-meta">
+            <span class="article-tag">教学论文</span>
+            <span class="article-tag amber">课题研究</span>
+            <span>📅 2026年5月</span>
+            <span>📝 约4500字</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-item" data-type="courseware">
+        <div class="article-icon ppt">📊</div>
+        <div class="article-info">
+          <div class="article-title">核心素养导向下的初中历史教学</div>
+          <div class="article-excerpt">系统解读历史学科五大核心素养内涵，结合初中教学案例，指导如何在课堂中落实素养目标。专题讲座课件，共36页。</div>
+          <div class="article-meta">
+            <span class="article-tag amber">培训课件</span>
+            <span>📅 2026年5月</span>
+            <span>📊 PPT · 36页</span>
+            <span>💾 下载课件 ↓</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-item" data-type="courseware">
+        <div class="article-icon ppt">📊</div>
+        <div class="article-info">
+          <div class="article-title">义务教育历史课程标准（2022年版）解读</div>
+          <div class="article-excerpt">深度解读新课标变化要点，重点剖析课程内容结构调整与学业质量要求，帮助教师准确把握教学方向。讲座课件，共48页。</div>
+          <div class="article-meta">
+            <span class="article-tag amber">培训课件</span>
+            <span>📅 2026年4月</span>
+            <span>📊 PPT · 48页</span>
+            <span>💾 下载课件 ↓</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-item" data-type="article">
+        <div class="article-icon doc">📄</div>
+        <div class="article-info">
+          <div class="article-title">永福红色资源在初中历史教学中的开发与利用</div>
+          <div class="article-excerpt">系统梳理永福红色革命历史资源，探索其在八年级中国近代史教学中的运用策略，落实红色基因传承。</div>
+          <div class="article-meta">
+            <span class="article-tag">教学论文</span>
+            <span class="article-tag amber">乡土资源</span>
+            <span>📅 2026年2月</span>
+            <span>📝 约4200字</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-item" data-type="design">
+        <div class="article-icon doc">📋</div>
+        <div class="article-info">
+          <div class="article-title">"学为中心"理念下的历史课堂任务设计——以《北宋的政治》为例</div>
+          <div class="article-excerpt">以部编版七年级下册《北宋的政治》一课为例，展示如何在"学为中心"理念下设计学习任务单，实现课堂从"教"到"学"的转变。</div>
+          <div class="article-meta">
+            <span class="article-tag">教学设计</span>
+            <span>📅 2026年3月</span>
+            <span>📋 含任务单</span>
+            <span>💾 下载设计 ↓</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer style="background:#062921;color:rgba(255,255,255,.55);padding:24px 0;font-size:13px;text-align:center">
+  <p>&copy; 2026 永福历史教研工作室 &middot; 依托永福乡土资源 &middot; 构建"学为中心"历史课堂</p>
+  <p style="margin-top:6px"><a onclick="window.location.href='index.html'" style="color:var(--teal-light);cursor:pointer">&larr; 返回首页</a></p>
+</footer>
+
+<script>
+// 筛选标签
+document.querySelectorAll('.filter-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+    tag.classList.add('active');
+    const filter = tag.dataset.filter;
+    document.querySelectorAll('.article-item').forEach(item => {
+      if (filter === 'all' || item.dataset.type === filter) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
