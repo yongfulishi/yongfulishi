@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>发刊词：让历史在乡土中生长 - 永福历史教研工作室</title>
+<style>
+:root{
+  --teal-dark:#085041; --teal:#0F6E56; --teal-mid:#1D9E75; --teal-light:#5DCAA5; --teal-bg:#E1F5EE;
+  --amber:#BA7517; --amber-light:#EF9F27; --amber-bg:#FAEEDA;
+  --ink:#2C2C2A; --muted:#6B6A65; --line:#E8E7E1; --bg:#FAF9F6; --white:#FFF;
+  --serif:'Noto Serif SC','SimSun','宋体',serif; --sans:'Noto Sans SC','Microsoft YaHei','微软雅黑',sans-serif;
+  --mifei:'MiFeiTi','Noto Serif SC','SimSun','宋体',serif;
+  --maxw:820px;
+}
+@font-face{
+  font-family:'MiFeiTi';
+  src:url('fonts/mifei.woff2') format('woff2');
+  font-display:swap;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px}
+a{color:inherit;text-decoration:none}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.94);backdrop-filter:blur(10px);border-bottom:0.5px solid var(--line)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-back{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:var(--teal);font-weight:500;cursor:pointer;transition:color .2s}
+.nav-back:hover{color:var(--teal-dark)}
+.nav-logo{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink)}
+.nav-logo span{color:var(--teal)}
+
+/* ===== ARTICLE HEADER ===== */
+.article-hero{margin-top:60px;background:linear-gradient(135deg,#0A4033,#0F6E56,#0D7B5E);color:#fff;position:relative;overflow:hidden}
+.article-hero::before{content:"";position:absolute;top:-30%;right:-8%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.06),transparent 60%);pointer-events:none}
+.article-hero-inner{max-width:var(--maxw);margin:0 auto;padding:56px 24px 48px;position:relative;z-index:2}
+.article-tag{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.82);margin-bottom:20px}
+.article-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber-light)}
+.article-title{font-family:var(--serif);font-size:34px;line-height:1.4;margin-bottom:16px;font-weight:700}
+.article-title .hl{color:var(--amber-light)}
+.article-subtitle{font-family:var(--serif);font-size:17px;color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:28px;font-style:italic}
+.article-meta{display:flex;gap:20px;align-items:center;font-size:13px;color:rgba(255,255,255,.65)}
+.article-meta .author{display:flex;align-items:center;gap:8px}
+.article-meta .avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.4);box-shadow:0 1px 6px rgba(0,0,0,.15)}
+
+/* ===== ARTICLE BODY ===== */
+.article-body{max-width:var(--maxw);margin:0 auto;padding:48px 24px 64px}
+.article-body p{font-size:16px;color:var(--ink);line-height:2;margin-bottom:20px;text-align:justify}
+.article-body .lead{font-size:17px;color:var(--ink);line-height:2;font-weight:500;margin-bottom:24px}
+.article-body .lead::first-letter{font-family:var(--serif);font-size:42px;font-weight:700;color:var(--teal);float:left;line-height:1;margin-right:8px;margin-top:4px}
+
+.article-body h2{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--teal-dark);margin:40px 0 18px;padding-left:14px;border-left:4px solid var(--teal)}
+.article-body h3{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink);margin:28px 0 14px}
+
+/* 强调段落 */
+.article-body .highlight{background:var(--teal-bg);border-radius:12px;padding:24px 28px;margin:28px 0;font-size:16px;color:var(--teal-dark);line-height:2;border-left:4px solid var(--teal-mid)}
+.article-body .highlight strong{color:var(--teal-dark);font-weight:600}
+
+/* 乡土元素引用 */
+.article-body .local-quote{position:relative;background:var(--amber-bg);border-radius:12px;padding:20px 24px 20px 56px;margin:28px 0;font-size:15px;color:var(--ink);line-height:1.9}
+.article-body .local-quote::before{content:'\201C';position:absolute;left:20px;top:8px;font-family:var(--serif);font-size:42px;color:var(--amber);line-height:1}
+.article-body .local-quote strong{color:var(--amber);font-weight:600}
+
+/* 分隔线 */
+.article-body .divider{display:flex;align-items:center;justify-content:center;gap:8px;margin:36px 0}
+.article-body .divider span{width:6px;height:6px;border-radius:50%;background:var(--teal-light)}
+.article-body .divider span:nth-child(2){background:var(--amber-light)}
+
+/* 签名区 */
+.signature{margin-top:48px;padding-top:28px;border-top:0.5px solid var(--line);text-align:right}
+.signature .sig-name{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.signature .sig-date{font-size:14px;color:var(--muted)}
+.signature .sig-seal{display:inline-block;margin-top:10px;font-family:var(--serif);font-size:13px;color:var(--teal);border:1.5px solid var(--teal);padding:4px 12px;border-radius:6px;letter-spacing:1px}
+
+/* 作者简介卡片 */
+.author-bio{margin-top:44px;background:linear-gradient(135deg,#F8FAFB,#F2F7F4);border-radius:14px;padding:28px 32px;display:flex;gap:24px;align-items:flex-start;border:0.5px solid var(--line)}
+.author-bio .bio-avatar{width:88px;height:88px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid var(--teal-bg);box-shadow:0 2px 10px rgba(15,110,86,.12)}
+.author-bio .bio-content{flex:1}
+.author-bio .bio-name{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--teal-dark);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.author-bio .bio-name .badge{font-size:11px;font-weight:500;background:var(--amber);color:#fff;padding:2px 9px;border-radius:20px;font-family:var(--sans)}
+.author-bio .bio-text{font-size:14.5px;color:var(--ink);line-height:1.95;text-align:justify}
+
+/* ===== FOOTER ===== */
+.article-footer{background:#062921;color:rgba(255,255,255,.55);padding:24px 0;font-size:13px;text-align:center}
+.article-footer a{color:var(--teal-light);cursor:pointer}
+.article-footer a:hover{color:#fff}
+
+@media(max-width:680px){
+  .article-title{font-size:26px}
+  .article-subtitle{font-size:15px}
+  .article-body{padding:36px 20px 48px}
+  .article-body p{font-size:15px}
+  .article-body h2{font-size:19px}
+  .nav-logo{display:none}
+  .author-bio{flex-direction:column;align-items:center;text-align:center;padding:22px 18px}
+  .author-bio .bio-avatar{width:72px;height:72px}
+  .author-bio .bio-name{justify-content:center}
+}
+
+@media(max-width:480px){
+  .nav-inner{padding:0 14px;height:54px}
+  .nav-back{font-size:13px}
+  .article-hero-inner{padding:40px 16px 34px}
+  .article-title{font-size:21px;line-height:1.35}
+  .article-subtitle{font-size:14px}
+  .article-meta{gap:12px;font-size:12px;flex-wrap:wrap}
+  .article-meta .avatar{width:34px;height:34px}
+  .article-body{padding:28px 14px 40px}
+  .article-body p{font-size:14.5px;line-height:1.9}
+  .article-body .lead{font-size:15px}
+  .article-body .lead::first-letter{font-size:36px}
+  .article-body h2{font-size:17px;padding-left:10px}
+  .article-body h3{font-size:16px}
+  .article-body .highlight{padding:18px 16px;font-size:14.5px;margin:22px 0}
+  .article-body .local-quote{padding:16px 16px 16px 48px;font-size:14px;margin:22px 0}
+  .article-body .local-quote::before{font-size:36px;left:14px}
+  .author-bio{padding:18px 14px;gap:16px}
+  .author-bio .bio-avatar{width:64px;height:64px}
+  .author-bio .bio-name{font-size:16px}
+  .author-bio .bio-text{font-size:13.5px;line-height:1.85}
+  .signature{margin-top:36px;padding-top:22px}
+  .signature .sig-name{font-size:14px}
+  .signature .sig-date{font-size:13px}
+  .article-footer{padding:20px 16px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-back" onclick="window.location.href='index.html'">← 返回首页</a>
+    <span class="nav-logo">永福历史教研<span>工作室</span></span>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-tag">发刊词 · 创刊首篇</div>
+    <h1 class="article-title">让历史在<span class="hl">乡土</span>中生长</h1>
+    <p class="article-subtitle">写在永福历史教研工作室网站上线之际</p>
+    <div class="article-meta">
+      <div class="author">
+        <img class="avatar" src="images/avatar-zhang.jpg" alt="">
+        <span>张阳春 · 工作室主持人</span>
+      </div>
+      <span>2026年6月21日</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+
+  <p class="lead">永福，福寿之乡。百寿岩前，"寿"字千载，笔锋遒劲，刻石为证；永宁州城，城门巍峨，岁月留痕，砖石无声。状元古井旁的书声已远，红色土地上的记忆犹新。这片土地，承载着厚重的过去，也孕育着充满希望的未来。</p>
+
+  <p>然而，在永福的农村初中历史课堂上，我们时常看到这样的场景：孩子们翻着课本，念着遥远的故事，却不知脚下这片土地也曾上演过波澜壮阔的历史。百寿岩就在家门口，孩子们却只当它是一处风景；永宁州古城走过无数次，却从未想过它是一本活着的历史书。</p>
+
+  <p>历史，不该只是课本上的文字。它应该有温度、有泥土的气息、有家乡的味道。</p>
+
+  <p>这，就是我们创办"永福历史教研工作室"网站的初衷。</p>
+
+  <div class="divider"><span></span><span></span><span></span></div>
+
+  <h2>我们是谁</h2>
+
+  <p>我们是永福县一群扎根一线的历史教师。在县教研室的指导下，我们组建了这支教研团队，围绕"依托永福乡土资源，构建农村初中历史'学为中心'课堂"这一课题，开启了教学改革的探索之旅。</p>
+
+  <p>我们深知，农村学校的历史教学面临诸多现实困难：资源有限、师资紧张、学生基础参差。但我们同样坚信，农村不是教育的洼地，乡土不是教学的短板——恰恰相反，脚下的这片土地，本身就是最生动、最鲜活的历史课堂。</p>
+
+  <div class="local-quote">
+    百寿岩的<strong>"寿"字石刻</strong>，永宁州古城的<strong>城墙砖石</strong>，状元文化的<strong>耕读传统</strong>，红色土地上的<strong>革命记忆</strong>——这些不是冰冷的文物，而是有温度的故事，是历史教学取之不尽的活水源头。
+  </div>
+
+  <h2>我们要做什么</h2>
+
+  <div class="highlight">
+    <p style="margin-bottom:16px"><strong>让乡土资源走进课堂。</strong>永福不缺历史。百寿岩的摩崖石刻、永宁州古城的城墙砖石、状元文化的耕读传统、红色记忆的革命精神——这些都是历史教学取之不尽的宝藏。我们要做的，就是将这些散落在田间地头、古巷老街中的历史资源，转化为课堂上有血有肉的教学素材，让学生在乡土中读懂历史，在历史中认识家乡。</p>
+    <p style="margin-bottom:16px"><strong>让"学为中心"落地生根。</strong>"学为中心"不是一个口号，而是一种课堂样态的深刻转变。它意味着把课堂还给学生，让学生在真实的问题情境中探究历史、在合作交流中思考历史、在实践体验中感悟历史。我们要探索的，是在农村初中的真实条件下，如何让这种理念真正落地——不是照搬城市学校的模式，而是走出一条适合农村课堂的路。</p>
+    <p style="margin-bottom:0"><strong>让教师在研究中成长。</strong>这个网站不只是展示成果的窗口，更是教师专业成长的平台。我们希望每一位工作室成员都能在这里记录教学思考、分享实践成果、碰撞学术观点。教研不该是孤独的旅行，而应是一群人结伴同行。</p>
+  </div>
+
+  <h2>我们期待什么</h2>
+
+  <p>这个网站面向所有关心历史教育的人——永福的历史教师、广西的教育同仁、以及全国各地志同道合的伙伴。</p>
+
+  <p>我们期待它成为一个交流的家园：这里有教研动态，记录我们每一次研讨与走访的脚步；有教学资源，分享我们开发的教学设计与乡土素材；有课堂实录，呈现"学为中心"理念下真实的课堂样貌；有研究文章，凝聚我们对历史教学的思考与探索。</p>
+
+  <p>我们更期待它成为一粒种子。当乡土资源的种子播撒在课堂里，当"学为中心"的理念扎根在教学中，我们相信，永福的历史课堂会慢慢发生变化——孩子们会开始关注脚下的土地，会带着好奇和温度走进历史，会在家乡的山水间找到属于自己的文化自信。</p>
+
+  <div class="divider"><span></span><span></span><span></span></div>
+
+  <h2>写在最后</h2>
+
+  <div class="local-quote">
+    <strong>让农村孩子在乡土里读懂历史，在历史中认识家乡。</strong>
+  </div>
+
+  <p>这是工作室的初心，也是这个网站的使命。</p>
+
+  <p>从今天起，永福历史教研工作室网站正式上线。我们将以这方小小的网页为阵地，记录一段关于乡土、关于课堂、关于成长的故事。</p>
+
+  <p>故事才刚刚开始。我们邀请你，一起书写。</p>
+
+  <!-- 作者简介 -->
+  <div class="author-bio">
+    <img class="bio-avatar" src="images/avatar-zhang.jpg" alt="">
+    <div class="bio-content">
+      <div class="bio-name">张阳春 <span class="badge">工作室主持人</span></div>
+      <div class="bio-text">中小学高级教师，永福县首批学科带头人，现任永福县历史学科教研员。从教以来，始终扎根一线，深耕课堂，多次荣获永福县优秀教师、优秀教育工作者等荣誉称号。在教研领域，先后主持或参与多项市县级课题研究，积累了丰富的课题实践经验。作为工作室主持人，致力于带领全县历史教师团队深耕教学研究，以乡土资源为抓手、以"学为中心"为理念，共同探索农村初中历史教学改革的新路径，努力提升永福县历史学科的教育教学质量。</div>
+    </div>
+  </div>
+
+  <!-- 签名 -->
+  <div class="signature">
+    <div class="sig-name">永福历史教研工作室</div>
+    <div class="sig-date">2026年仲夏 · 写于永福凤城</div>
+    <div class="sig-seal">学为中心 · 乡土育人</div>
+  </div>
+
+</article>
+
+<!-- FOOTER -->
+<footer class="article-footer">
+  <p>© 2026 永福历史教研工作室 · 依托永福乡土资源 · 构建"学为中心"历史课堂</p>
+  <p style="margin-top:6px"><a onclick="window.location.href='index.html'">← 返回首页</a></p>
+</footer>
+
+</body>
+</html>
