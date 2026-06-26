@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于开展全县历史教师梯级类型认定材料报送工作的通知 - 永福历史教研工作室</title>
+<style>
+:root{
+  --teal-dark:#085041; --teal:#0F6E56; --teal-mid:#1D9E75; --teal-light:#5DCAA5; --teal-bg:#E1F5EE;
+  --amber:#BA7517; --amber-light:#EF9F27; --amber-bg:#FAEEDA;
+  --ink:#2C2C2A; --muted:#6B6A65; --line:#E8E7E1; --bg:#FAF9F6; --white:#FFF;
+  --serif:'Noto Serif SC','SimSun','宋体',serif; --sans:'Noto Sans SC','Microsoft YaHei','微软雅黑',sans-serif;
+  --mifei:'MiFeiTi','Noto Serif SC','SimSun','宋体',serif;
+  --maxw:820px;
+}
+@font-face{
+  font-family:'MiFeiTi';
+  src:url('fonts/mifei.woff2') format('woff2');
+  font-display:swap;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.85;font-size:16px}
+a{color:inherit;text-decoration:none}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.94);backdrop-filter:blur(10px);border-bottom:0.5px solid var(--line)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-back{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:var(--teal);font-weight:500;cursor:pointer;transition:color .2s}
+.nav-back:hover{color:var(--teal-dark)}
+.nav-logo{font-family:var(--serif);font-size:15px;font-weight:600;color:var(--ink)}
+.nav-logo span{color:var(--teal)}
+
+/* ===== ARTICLE HEADER ===== */
+.article-hero{margin-top:60px;background:linear-gradient(135deg,#0A4033,#0F6E56,#0D7B5E);color:#fff;position:relative;overflow:hidden}
+.article-hero::before{content:"";position:absolute;top:-30%;right:-8%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.06),transparent 60%);pointer-events:none}
+.article-hero-inner{max-width:var(--maxw);margin:0 auto;padding:56px 24px 48px;position:relative;z-index:2}
+.article-tag{display:inline-flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.82);margin-bottom:20px}
+.article-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--amber-light)}
+.article-title{font-family:var(--serif);font-size:30px;line-height:1.45;margin-bottom:16px;font-weight:700}
+.article-title .hl{color:var(--amber-light)}
+.article-meta{display:flex;gap:20px;align-items:center;font-size:13px;color:rgba(255,255,255,.65)}
+
+/* ===== ARTICLE BODY ===== */
+.article-body{max-width:var(--maxw);margin:0 auto;padding:48px 24px 64px}
+.article-body p{font-size:16px;color:var(--ink);line-height:2;margin-bottom:16px;text-align:justify}
+.article-body .recipient{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:16px}
+.article-body .preamble{text-indent:2em;margin-bottom:20px}
+
+.article-body h2{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--teal-dark);margin:36px 0 16px;padding-left:14px;border-left:4px solid var(--teal)}
+.article-body h3{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--ink);margin:24px 0 12px}
+
+/* 表格样式 */
+.article-body table{width:100%;border-collapse:collapse;margin:16px 0 24px;font-size:14px}
+.article-body table th{background:var(--teal-dark);color:#fff;padding:10px 12px;text-align:center;font-weight:500;font-size:14px}
+.article-body table td{padding:10px 12px;border:1px solid var(--line);vertical-align:top}
+.article-body table tr:nth-child(even){background:#F8FAF9}
+.article-body table td:first-child{text-align:center}
+
+/* 材料分类卡片 */
+.material-card{border-radius:12px;padding:20px 24px;margin:18px 0;border-left:4px solid;font-size:15px}
+.material-card .card-title{font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.material-card ul{list-style:none;padding-left:4px;margin:8px 0}
+.material-card li{margin-bottom:7px;padding-left:18px;position:relative;line-height:1.8}
+.material-card li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%}
+
+.mc-basic{background:var(--teal-bg);border-color:var(--teal-mid)}
+.mc-basic .card-title{color:var(--teal-dark)}
+.mc-basic li::before{background:var(--teal-mid)}
+
+.mc-dev{background:#E8F5E9;border-color:#43A047}
+.mc-dev .card-title{color:#2E7D32}
+.mc-dev li::before{background:#43A047}
+
+.mc-key{background:var(--amber-bg);border-color:var(--amber-light)}
+.mc-key .card-title{color:var(--amber)}
+.mc-key li::before{background:var(--amber-light)}
+
+.mc-lead{background:#FCE8E6;border-color:#C62828}
+.mc-lead .card-title{color:#B71C1C}
+.mc-lead li::before{background:#C62828}
+
+/* 高亮提示框 */
+.deadline-box{background:linear-gradient(135deg,#C62828,#8E0000);color:#fff;text-align:center;padding:20px 30px;border-radius:12px;margin:28px 0;font-size:16px}
+.deadline-box .big{font-size:24px;font-weight:bold;margin-top:6px}
+
+.email-box{background:#E3F2FD;border:2px dashed #1565C0;text-align:center;padding:16px;border-radius:12px;margin:20px 0}
+.email-box .email{font-size:22px;font-weight:bold;color:#1565C0;letter-spacing:1px;margin-top:4px}
+
+.code-inline{background:#eee;padding:2px 8px;border-radius:3px;font-family:monospace;font-size:14px}
+
+.note-section{background:#FAFAFA;border:1px solid var(--line);border-radius:12px;padding:18px 24px;margin-top:24px}
+.note-section h3{margin-top:0}
+.note-section ol{padding-left:20px;margin:8px 0}
+.note-section li{margin-bottom:8px;line-height:1.9}
+
+/* 签名区 */
+.signature{margin-top:48px;padding-top:28px;border-top:0.5px solid var(--line);text-align:right}
+.signature .sig-name{font-family:var(--serif);font-size:16px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.signature .sig-date{font-size:14px;color:var(--muted)}
+
+/* 分隔线 */
+.divider{display:flex;align-items:center;justify-content:center;gap:8px;margin:36px 0}
+.divider span{width:6px;height:6px;border-radius:50%;background:var(--teal-light)}
+.divider span:nth-child(2){background:var(--amber-light)}
+
+/* ===== FOOTER ===== */
+.article-footer{background:#062921;color:rgba(255,255,255,.55);padding:24px 0;font-size:13px;text-align:center}
+.article-footer a{color:var(--teal-light);cursor:pointer}
+.article-footer a:hover{color:#fff}
+
+@media(max-width:680px){
+  .article-title{font-size:22px}
+  .article-body{padding:36px 20px 48px}
+  .article-body p{font-size:15px}
+  .article-body h2{font-size:18px}
+  .article-body table{font-size:13px}
+  .article-body table th,.article-body table td{padding:8px 6px}
+  .nav-logo{display:none}
+  .material-card{padding:16px 14px}
+  .deadline-box{padding:16px 18px;font-size:14px}
+  .deadline-box .big{font-size:19px}
+  .email-box .email{font-size:18px}
+}
+@media(max-width:480px){
+  .nav-inner{padding:0 14px;height:54px}
+  .nav-back{font-size:13px}
+  .article-hero-inner{padding:40px 16px 34px}
+  .article-title{font-size:18px;line-height:1.35}
+  .article-body{padding:28px 14px 40px}
+  .article-body p{font-size:14.5px;line-height:1.9}
+  .article-body h2{font-size:16px;padding-left:10px}
+  .article-body h3{font-size:15px}
+  .article-body table{font-size:12px}
+  .article-body table th,.article-body table td{padding:6px 4px}
+  .material-card{padding:14px 12px;font-size:13.5px}
+  .note-section{padding:14px 16px}
+  .signature{margin-top:36px;padding-top:22px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-back" onclick="window.location.href='index.html'">← 返回首页</a>
+    <span class="nav-logo">永福历史教研<span>工作室</span></span>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<header class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-tag">通知公告 · 2026年6月</div>
+    <h1 class="article-title">关于开展全县历史教师<span class="hl">梯级类型认定</span><br>材料报送工作的通知</h1>
+    <div class="article-meta">
+      <span>永福县教育局教研室</span>
+      <span>2026年6月25日</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+
+  <p class="recipient">全县各初中、永中初中部：</p>
+  <p class="preamble">根据《永福县教师梯级发展培养工程实施方案（试行）》（以下简称《方案》）文件精神，现组织开展全县历史学科教师梯级类型认定工作。为做好本次认定工作，现将有关事项通知如下：</p>
+
+  <h2>一、认定对象</h2>
+  <p>全县各初中（含永中初中部）在职历史教师，根据个人实际情况自愿申报对应梯级类型。</p>
+
+  <h2>二、梯级类型及申报资格</h2>
+  <table>
+    <tr><th style="width:100px;">梯级类型</th><th>申报资格（满足其一即可申报）</th></tr>
+    <tr style="background:#E1F5EE;">
+      <td style="text-align:center;font-weight:bold;color:#085041;">基础型教师</td>
+      <td>① 任职未满3年的新任教师<br>② 近3年教学荣誉奖获积分在10分以内</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;font-weight:bold;color:#196f3d;">发展型教师</td>
+      <td>① 教龄5年以上且近3年荣誉积分≥30分<br>② 工作未满5年但近3年荣誉积分≥50分</td>
+    </tr>
+    <tr style="background:#FAEEDA;">
+      <td style="text-align:center;font-weight:bold;color:#BA7517;">骨干教师</td>
+      <td>① 已完成发展型教师认定<br>② 近3年荣誉积分≥50分且有1次二等奖以上且课堂评分≥75分</td>
+    </tr>
+    <tr>
+      <td style="text-align:center;font-weight:bold;color:#922b21;">学科带头人</td>
+      <td>① 已评为县级以上教学能手/学科带头人/骨干教师<br>② 或近3年荣誉积分≥60分且有2次二等奖以上且能主持课题研究且课堂评分≥85分</td>
+    </tr>
+  </table>
+
+  <h2>三、需要提交的材料</h2>
+
+  <h3>（一）所有申报者均需提交的基础材料</h3>
+  <table>
+    <tr><th style="width:40px;">序号</th><th style="width:130px;">材料名称</th><th>具体说明</th><th style="width:70px;">是否必须</th></tr>
+    <tr><td>1</td><td>学历学位证书</td><td>最高学历和学位证明</td><td style="text-align:center;">必交</td></tr>
+    <tr><td>2</td><td>教师资格证</td><td>全页</td><td style="text-align:center;">必交</td></tr>
+    <tr><td>3</td><td>职称证书</td><td>现任职称证书（如有）</td><td style="text-align:center;">按实提供</td></tr>
+  </table>
+
+  <h3>（二）各梯级类型额外需提交材料</h3>
+
+  <div class="material-card mc-basic">
+    <div class="card-title">📘 基础型教师 额外材料</div>
+    <ul>
+      <li>校本研修记录：研讨汇报课教案、听课评课记录等（每学期至少1节）</li>
+      <li>教学荣誉奖证书：近3年所有获奖证书（每学年积分10分+）</li>
+      <li>竞赛/荣誉获奖证书：县级以上至少1次</li>
+      <li>教育教学感悟文章：校级以上交流的文章</li>
+    </ul>
+  </div>
+
+  <div class="material-card mc-dev">
+    <div class="card-title">📗 发展型教师 额外材料</div>
+    <ul>
+      <li>研讨汇报课记录：每学年至少2节，含教案/PPT等</li>
+      <li>课题研究证明：参与县级及以上课题研究立项/结题证明</li>
+      <li>教学荣誉奖证书：近3年获奖证书（每学年积分20分+）</li>
+      <li>教学竞赛获奖证书：3年内至少2项或县级以上1项</li>
+      <li>教育教学文章：在县区级以上交流/发表</li>
+    </ul>
+  </div>
+
+  <div class="material-card mc-key">
+    <div class="card-title">📙 骨干教师 额外材料</div>
+    <ul>
+      <li>科研课题材料：主持/参与县级以上科研课题立项/结题证明</li>
+      <li>教学荣誉奖证书：近3年获奖证书（每学年积分25分+）</li>
+      <li>教学竞赛/指导获奖：县级2项或市级1项</li>
+      <li>教育教学文章：在县级以上交流或发表</li>
+      <li>辐射作用证明：专题讲座、指导青年教师等相关证明</li>
+    </ul>
+  </div>
+
+  <div class="material-card mc-lead">
+    <div class="card-title">📕 学科带头人 额外材料</div>
+    <ul>
+      <li>综合荣誉称号证书：市级及以上优秀教师/班主任/党员等（至少1项）</li>
+      <li>主持课题/项目证明：主持县级以上课题或教改项目立项/结题证明</li>
+      <li>教学业绩证明：培养期内成果获奖或指导青年教师获县级一等奖/市级奖励</li>
+      <li>学术团队证明：组建/主持校级、县区或市级学术团队</li>
+      <li>辐射带动材料：公开观摩、论坛讲座、著述出版等</li>
+    </ul>
+  </div>
+
+  <h2>四、报送方式与命名规范</h2>
+  <p>
+    <strong>邮件主题/打包命名：</strong><span class="code-inline">梯级认定 + 姓名 + 学校 + 申报类型</span><br>
+    <span style="color:var(--muted);font-size:14px;">示例：梯级认定+张三+永福县第一初级中学+骨干教师</span>
+  </p>
+  <p>
+    <strong>文件命名：</strong><span class="code-inline">姓名_材料名称.jpg/pdf</span>
+  </p>
+
+  <div class="deadline-box">
+    <div>⏰ 截止时间</div>
+    <div class="big">2026年7月5日（星期日）17:00 前</div>
+  </div>
+
+  <div class="email-box">
+    <div>📧 请将材料发送至以下邮箱：</div>
+    <div class="email">3189131168@qq.com</div>
+  </div>
+
+  <div class="note-section">
+    <h3 style="border:none;padding:0;margin-top:0;">⚠️ 注意事项</h3>
+    <ol>
+      <li>请各位教师对照《方案》附件3中的<strong>"认定（考核）评价标准"</strong>，认真准备相应材料。</li>
+      <li>所有扫描件或照片应<strong>清晰可辨</strong>，建议使用PDF格式或高清JPG格式。</li>
+      <li>教学荣誉奖积分计算标准参照《方案》相关规定执行。</li>
+      <li>跨学科任教的教师，只能选择一个学科进行认定。</li>
+      <li>如有疑问，请联系教研室张老师咨询。</li>
+    </ol>
+  </div>
+
+  <!-- 签名 -->
+  <div class="signature">
+    <div class="sig-name">永福县教育局教研室</div>
+    <div class="sig-date">2026年6月25日</div>
+  </div>
+
+</article>
+
+<!-- FOOTER -->
+<footer class="article-footer">
+  <p>© 2026 永福历史教研工作室 · 依托永福乡土资源 · 构建"学为中心"历史课堂</p>
+  <p style="margin-top:6px"><a onclick="window.location.href='index.html'">← 返回首页</a></p>
+</footer>
+
+</body>
+</html>
