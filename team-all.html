@@ -19,6 +19,13 @@
   --bg:#FAF8F5;
   --card:#FFFFFF;
   --maxw:1160px;
+  --mifei:'MiFeiTi','Noto Serif SC','SimSun','宋体',serif;
+}
+
+@font-face{
+  font-family:'MiFeiTi';
+  src:url('fonts/mifei.woff2') format('woff2');
+  font-display:swap;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Noto Sans SC','Microsoft YaHei','微软雅黑',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
@@ -28,7 +35,7 @@ body{font-family:'Noto Sans SC','Microsoft YaHei','微软雅黑',sans-serif;back
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;gap:20px;align-items:center}
 .nav-bar a{color:#ccc;text-decoration:none;transition:.2s}
 .nav-bar a:hover{color:#fff}
-.nav-logo{font-weight:700;color:#fff;letter-spacing:1px;margin-right:auto}
+.nav-logo{font-family:var(--mifei);font-weight:400;color:#fff;letter-spacing:1px;margin-right:auto}
 
 /* 页面头部 */
 .page-header{background:linear-gradient(135deg,var(--teal),var(--teal-light));padding:44px 24px 36px;text-align:center;color:#fff}

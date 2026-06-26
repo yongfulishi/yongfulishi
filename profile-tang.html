@@ -10,7 +10,14 @@
   --amber:#BA7517; --amber-light:#EF9F27; --amber-bg:#FAEDDA;
   --ink:#2C2C2A; --muted:#6B6A65; --line:#E8E7E1; --bg:#FAF9F6; --white:#FFF;
   --serif:'Noto Serif SC','SimSun','宋体',serif; --sans:'Noto Sans SC','Microsoft YaHei','微软雅黑',sans-serif;
+  --mifei:'MiFeiTi','Noto Serif SC','SimSun','宋体',serif;
   --maxw:1160px;
+}
+
+@font-face{
+  font-family:'MiFeiTi';
+  src:url('fonts/mifei.woff2') format('woff2');
+  font-display:swap;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -162,7 +169,7 @@ a{color:inherit;text-decoration:none}
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-back" onclick="window.location.href='index.html'">← 返回首页</a>
-    <span style="font-size:13px;color:var(--muted)">永福历史教研工作室</span>
+    <span style="font-family:var(--mifei);font-size:15px;color:var(--teal-dark)">永福历史教研工作室</span>
   </div>
 </nav>
 
