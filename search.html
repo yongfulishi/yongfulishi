@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>搜索 - 永福历史教研工作室</title>
+<style>
+:root{
+  --teal-dark:#085041; --teal:#0F6E56; --teal-mid:#1D9E75; --teal-light:#5DCAA5; --teal-bg:#E1F5EE;
+  --amber:#BA7517; --amber-light:#EF9F27; --amber-bg:#FAEEDA;
+  --ink:#2C2C2A; --muted:#6B6A65; --line:#E8E7E1; --bg:#FAF9F6; --white:#FFF;
+  --serif:'Noto Serif SC','SimSun','宋体',serif; --sans:'Noto Sans SC','Microsoft YaHei','微软雅黑',sans-serif;
+  --mifei:'MiFeiTi','Noto Serif SC','SimSun','宋体',serif;
+  --maxw:1160px;
+}
+@font-face{
+  font-family:'MiFeiTi';
+  src:url('fonts/mifei.woff2') format('woff2');
+  font-display:swap;
+}
+@font-face{
+  font-family:'QiTi';
+  src:url('fonts/qiti.woff2') format('woff2');
+  font-display:swap;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,249,246,.94);backdrop-filter:blur(10px);border-bottom:0.5px solid var(--line)}
+.nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;gap:8px}
+.logo{display:inline-flex;align-items:center;gap:7px;font-family:var(--mifei);font-size:18px;color:var(--teal-dark);font-weight:400;white-space:nowrap}
+.logo:hover{color:var(--teal)}
+.logo-mark{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:var(--teal);color:#fff;font-family:var(--serif);font-size:15px;font-weight:700;flex-shrink:0}
+.nav-search{display:flex;align-items:center;gap:0;margin-left:auto;flex-shrink:0}
+.search-input{width:220px;padding:0 12px;border:0.5px solid var(--line);border-radius:8px 0 0 8px;background:var(--white);font-size:13px;color:var(--ink);outline:none;height:34px;font-family:var(--sans)}
+.search-input:focus{border-color:var(--teal);box-shadow:0 0 0 2px var(--teal-bg)}
+.search-btn{width:34px;height:34px;border-radius:0 8px 8px 0;border:none;background:var(--teal);color:#fff;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.search-btn:hover{background:var(--teal-dark)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.burger span{width:22px;height:2px;background:var(--ink);border-radius:2px}
+
+/* MAIN */
+.search-main{margin-top:60px;padding:32px 24px 80px;max-width:var(--maxw);margin-left:auto;margin-right:auto}
+.search-header{margin-bottom:24px}
+.search-header h1{font-family:var(--serif);font-size:24px;color:var(--ink);margin-bottom:8px}
+.search-header h1 em{color:var(--teal);font-style:normal;font-weight:600}
+.search-meta{font-size:13px;color:var(--muted)}
+.search-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--teal);cursor:pointer;margin-bottom:20px;padding:6px 14px;border-radius:8px;background:var(--teal-bg);transition:.2s;font-weight:500}
+.search-back:hover{background:var(--teal);color:#fff}
+
+/* RESULT CARD */
+.result-card{background:var(--white);border:0.5px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:14px;transition:.25s;cursor:pointer}
+.result-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(8,80,65,.08);border-color:var(--teal)}
+.result-cat{font-size:11px;color:var(--teal);background:var(--teal-bg);padding:2px 10px;border-radius:8px;display:inline-block;margin-bottom:8px;font-weight:500}
+.result-title{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.result-desc{font-size:13.5px;color:var(--muted);line-height:1.7}
+.result-desc em{color:var(--teal);font-style:normal;font-weight:500;background:rgba(15,110,86,.08);padding:1px 3px;border-radius:3px}
+
+/* EMPTY */
+.search-empty{text-align:center;padding:80px 24px;color:var(--muted)}
+.search-empty h2{font-family:var(--serif);font-size:20px;color:var(--ink);margin-bottom:12px}
+.search-empty p{font-size:14px}
+
+/* FOOTER */
+.footer{background:#062921;color:rgba(255,255,255,.55);padding:22px 0;font-size:12.5px;text-align:center}
+.footer-inner{max-width:var(--maxw);margin:0 auto;padding:0 24px;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px}
+
+@media(max-width:880px){
+  .burger{display:flex}
+  .search-input{width:160px}
+}
+@media(max-width:480px){
+  .nav-inner{height:54px;padding:0 16px}
+  .search-main{margin-top:54px;padding:24px 16px 60px}
+  .search-header h1{font-size:20px}
+  .search-input{width:120px;font-size:12px}
+  .result-card{padding:14px 16px}
+  .result-title{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="logo-mark">福</span><span>永福历史教研工作室</span></a>
+    <div class="nav-search">
+      <input type="text" class="search-input" id="searchInput2" placeholder="搜索文章、资源..." onkeypress="if(event.key==='Enter')doSearch2()">
+      <button class="search-btn" onclick="doSearch2()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:block"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></button>
+    </div>
+    <div class="burger" id="burger2"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="search-main" id="searchMain">
+  <a class="search-back" onclick="history.back()">← 返回首页</a>
+  <div class="search-header" id="searchHeader"></div>
+  <div id="searchResults"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span>&copy; 2026 永福历史教研工作室</span>
+    <span>依托永福乡土资源 · 构建"学为中心"历史课堂</span>
+  </div>
+</footer>
+
+<script>
+let searchData=null;
+const params=new URLSearchParams(window.location.search);
+const query=params.get('q')||'';
+const input2=document.getElementById('searchInput2');
+input2.value=query;
+
+fetch('search-data.json').then(r=>r.json()).then(data=>{
+  searchData=data;
+  if(query)performSearch(query);
+}).catch(()=>{document.getElementById('searchResults').innerHTML='<div class="search-empty"><h2>搜索索引加载失败</h2><p>请刷新页面重试</p></div>'});
+
+function performSearch(q){
+  const kw=q.toLowerCase().trim();
+  if(!kw){document.getElementById('searchResults').innerHTML='';return}
+  const results=searchData.filter(item=>{
+    const t=item.title.toLowerCase();
+    const d=item.desc.toLowerCase();
+    const c=item.category.toLowerCase();
+    return t.includes(kw)||d.includes(kw)||c.includes(kw);
+  });
+  const header=document.getElementById('searchHeader');
+  header.innerHTML='<h1>搜索：<em>'+q+'</em></h1><div class="search-meta">找到 '+results.length+' 个相关结果</div>';
+  const box=document.getElementById('searchResults');
+  if(!results.length){
+    box.innerHTML='<div class="search-empty"><h2>没有找到相关内容</h2><p>试试换个关键词，如"乡土资源"、"课题"、"培训"</p></div>';
+    return;
+  }
+  let html='';
+  results.forEach(item=>{
+    let desc=item.desc;
+    const re=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi');
+    desc=desc.replace(re,'<em>$&</em>');
+    html+='<div class="result-card" onclick="goResult(\''+item.url+'\',\''+item.tab+'\')">';
+    html+='<span class="result-cat">'+item.category+'</span>';
+    html+='<div class="result-title">'+item.title+'</div>';
+    html+='<div class="result-desc">'+desc+'</div>';
+    html+='</div>';
+  });
+  box.innerHTML=html;
+}
+
+function goResult(url,tab){
+  if(tab && url.startsWith('index.html')){
+    window.location.href='index.html?tab='+tab;
+  }else{
+    window.location.href=url;
+  }
+}
+
+function doSearch2(){
+  const q=input2.value.trim();
+  if(!q)return;
+  const newUrl='search.html?q='+encodeURIComponent(q);
+  if(window.location.pathname.includes('search.html')){
+    window.history.pushState(null,'',newUrl);
+    performSearch(q);
+  }else{
+    window.location.href=newUrl;
+  }
+}
+</script>
+</body>
+</html>

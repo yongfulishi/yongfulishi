@@ -1,0 +1,184 @@
+[
+  {
+    "title": "工作室简介",
+    "category": "首页",
+    "desc": "永福历史教研工作室（共研互促工作室）在永福县教育局教学研究室指导下成立，由张阳春主持，汇聚永福县第一初级中学、湾里初中、永安初中、罗锦初中、堡里初中、百寿初中、月山初中等多所学校的青年教师，以学为中心为核心理念，依托百寿岩、永宁州古城、状元文化、红色记忆与民俗非遗等乡土资源开展教研。",
+    "url": "index.html",
+    "tab": "brief"
+  },
+  {
+    "title": "工作室公告",
+    "category": "首页",
+    "desc": "发刊词：让历史在乡土中生长；学为中心历史课堂专题研讨通知；教学设计成果提交通知；暑期历史学科培训通知；历史教师梯级类型认定材料报送通知",
+    "url": "index.html",
+    "tab": "notice"
+  },
+  {
+    "title": "教研动态",
+    "category": "首页",
+    "desc": "工作室教研活动动态、教学研讨资讯、课堂观摩交流",
+    "url": "index.html",
+    "tab": "news"
+  },
+  {
+    "title": "教师培训",
+    "category": "首页",
+    "desc": "历史学科培训课程、专题研修活动、教师专业发展",
+    "url": "index.html",
+    "tab": "training"
+  },
+  {
+    "title": "课堂教学",
+    "category": "首页",
+    "desc": "历史课堂教学设计、课堂实录、教学反思、学为中心课堂实践",
+    "url": "index.html",
+    "tab": "classroom"
+  },
+  {
+    "title": "教学资源",
+    "category": "首页",
+    "desc": "历史教学课件、教案设计、各类试卷、电子课本、教研资料下载",
+    "url": "index.html",
+    "tab": "resources"
+  },
+  {
+    "title": "教学研究",
+    "category": "首页",
+    "desc": "历史教学论文、教研反思、教学方法探讨、学术论文",
+    "url": "index.html",
+    "tab": "articles"
+  },
+  {
+    "title": "乡土资源",
+    "category": "首页",
+    "desc": "永福乡土历史资源：百寿岩、永宁州古城、状元文化、红色记忆、民俗非遗",
+    "url": "index.html",
+    "tab": "reading"
+  },
+  {
+    "title": "课题研究",
+    "category": "首页",
+    "desc": "课题申报中：《依托永福乡土资源，构建农村初中历史学为中心课堂的实践研究》",
+    "url": "index.html",
+    "tab": "research"
+  },
+  {
+    "title": "发刊词：让历史在乡土中生长",
+    "category": "文章",
+    "desc": "写在网站上线之际——让农村孩子在乡土里读懂历史，在历史中认识家乡",
+    "url": "fakanji.html",
+    "tab": ""
+  },
+  {
+    "title": "历史教师梯级类型认定材料报送通知",
+    "category": "通知",
+    "desc": "关于开展全县历史教师梯级类型认定材料报送工作的通知，涉及申报条件、材料要求、报送时间等",
+    "url": "notice-tiji.html",
+    "tab": ""
+  },
+  {
+    "title": "张阳春老师个人主页",
+    "category": "成员",
+    "desc": "工作室主持人，永福县教研室历史教研员，教研之路不在高远而在每一步踏实的课堂里",
+    "url": "profile-zhang.html",
+    "tab": ""
+  },
+  {
+    "title": "韦荣明老师个人主页",
+    "category": "成员",
+    "desc": "骨干成员，永安初级中学历史教师，以史为鉴思通悟道",
+    "url": "profile-wei.html",
+    "tab": ""
+  },
+  {
+    "title": "梁进明老师个人主页",
+    "category": "成员",
+    "desc": "骨干成员，湾里初级中学历史教师，扎根乡村初中一线",
+    "url": "profile-liang.html",
+    "tab": ""
+  },
+  {
+    "title": "曾学秀老师个人主页",
+    "category": "成员",
+    "desc": "骨干成员，永福县第一初级中学历史教师",
+    "url": "profile-zeng.html",
+    "tab": ""
+  },
+  {
+    "title": "周玮老师个人主页",
+    "category": "成员",
+    "desc": "骨干成员，百寿初级中学历史教师，让历史成为启迪智慧的钥匙",
+    "url": "profile-zhou.html",
+    "tab": ""
+  },
+  {
+    "title": "唐燕山老师个人主页",
+    "category": "成员",
+    "desc": "骨干成员，罗锦初级中学政教处主任，我们在历史书上所轻轻翻过的一页便是他们波澜壮阔的一生",
+    "url": "profile-tang.html",
+    "tab": ""
+  },
+  {
+    "title": "廖宏倩老师个人主页",
+    "category": "成员",
+    "desc": "骨干成员，永福县第一初级中学历史教师，历史不应该成为记忆的负担而应该成为启蒙的灯塔",
+    "url": "profile-liao.html",
+    "tab": ""
+  },
+  {
+    "title": "秦群芳老师个人主页",
+    "category": "成员",
+    "desc": "骨干成员，永福县罗锦镇月山初级中学历史学科骨干教师，中小学一级教师，心怀热爱不负韶华",
+    "url": "profile-qin.html",
+    "tab": ""
+  },
+  {
+    "title": "崔文丹老师个人主页",
+    "category": "成员",
+    "desc": "骨干成员，永福县第一初级中学历史教研组长，中小学二级教师，读千年过往行今朝长路",
+    "url": "profile-cui.html",
+    "tab": ""
+  },
+  {
+    "title": "全体成员",
+    "category": "团队",
+    "desc": "工作室全体成员展示：张阳春、韦荣明、梁进明、曾学秀、周玮、唐燕山、廖宏倩、秦群芳、崔文丹",
+    "url": "team-all.html",
+    "tab": ""
+  },
+  {
+    "title": "百寿岩摩崖石刻",
+    "category": "乡土资源",
+    "desc": "永福百寿岩百寿图摩崖石刻，全国重点文物保护单位，南宋古石刻",
+    "url": "index.html",
+    "tab": "reading"
+  },
+  {
+    "title": "永宁州古城",
+    "category": "乡土资源",
+    "desc": "永宁州古城墙遗址，明代军事防御遗址，永福历史文化地标",
+    "url": "index.html",
+    "tab": "reading"
+  },
+  {
+    "title": "状元文化",
+    "category": "乡土资源",
+    "desc": "永福状元文化，科举历史文化资源，古代读书人精神传承",
+    "url": "index.html",
+    "tab": "reading"
+  },
+  {
+    "title": "红色记忆",
+    "category": "乡土资源",
+    "desc": "永福红色革命历史资源，革命先烈事迹，红色教育基地",
+    "url": "index.html",
+    "tab": "reading"
+  },
+  {
+    "title": "民俗非遗",
+    "category": "乡土资源",
+    "desc": "永福民俗非物质文化遗产，传统节庆、民间工艺、地方民俗",
+    "url": "index.html",
+    "tab": "reading"
+  }
+]
