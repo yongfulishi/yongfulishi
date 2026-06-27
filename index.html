@@ -222,6 +222,27 @@ a{color:inherit;text-decoration:none}
 .res-dl{font-size:12px;color:var(--teal);font-weight:500;cursor:pointer;text-decoration:none}
 .res-dl:hover{color:var(--teal-dark)}
 
+/* ===== TEXTBOOK CARDS ===== */
+.tb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px;margin-top:8px}
+.tb-card{background:var(--white);border:0.5px solid var(--line);border-radius:12px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.tb-card:hover{transform:translateY(-3px);box-shadow:0 8px 26px rgba(8,80,65,.09);border-color:transparent}
+.tb-cover{width:100%;aspect-ratio:3/4;overflow:hidden;background:var(--bg);position:relative;cursor:pointer}
+.tb-cover img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.tb-card:hover .tb-cover img{transform:scale(1.04)}
+.tb-cover-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.45));padding:20px 10px 8px;display:flex;align-items:flex-end;justify-content:center}
+.tb-cover-overlay span{color:#fff;font-size:11px;opacity:0;transition:.25s}
+.tb-card:hover .tb-cover-overlay span{opacity:1}
+.tb-info{padding:12px 14px 14px;flex:1;display:flex;flex-direction:column}
+.tb-title{font-weight:600;font-size:13.5px;line-height:1.5;margin-bottom:4px;color:var(--ink)}
+.tb-edition{font-size:11px;color:var(--muted);margin-bottom:10px}
+.tb-actions{display:flex;gap:8px;margin-top:auto}
+.tb-btn{flex:1;text-align:center;font-size:12px;font-weight:500;padding:7px 0;border-radius:8px;text-decoration:none;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:4px}
+.tb-btn-view{background:var(--teal-bg);color:var(--teal)}
+.tb-btn-view:hover{background:var(--teal);color:#fff}
+.tb-btn-dl{background:var(--amber-bg);color:var(--amber)}
+.tb-btn-dl:hover{background:var(--amber);color:#fff}
+.tb-pwd{font-size:10px;color:var(--muted);text-align:center;margin-top:6px}
+
 /* ===== TRAINING ===== */
 .train-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
 .train-card{background:var(--white);border:0.5px solid var(--line);border-radius:12px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
@@ -443,6 +464,7 @@ a{color:inherit;text-decoration:none}
   .news-excerpt{font-size:12px}
   .news-date{font-size:11px}
   .res-grid{grid-template-columns:1fr}
+  .tb-grid{grid-template-columns:repeat(2,1fr)}
   .train-grid{grid-template-columns:1fr}
   .class-grid{grid-template-columns:1fr}
   .read-grid{grid-template-columns:1fr}
@@ -491,6 +513,7 @@ a{color:inherit;text-decoration:none}
   .team-float-head{top:54px;padding:10px 16px}
   .team-float-head .tfh-title{font-size:15px}
   .team-float-head .tfh-sub{font-size:9px}
+  .tb-grid{grid-template-columns:1fr}
 }
 
 /* ===== 乡土资源子菜单 ===== */
@@ -809,6 +832,37 @@ a{color:inherit;text-decoration:none}
         <div class="res-card" data-type="courseware"><div class="res-top"><div class="res-icon t-courseware">📊</div><span class="res-type">课件</span></div><div class="res-title">百寿岩与永福寿文化 PPT 课件</div><div class="res-desc">图文并茂呈现百寿岩"寿"字文化，配套课堂互动问题，可直接用于课堂教学。</div><div class="res-foot"><span class="res-meta">七年级 · <b>42页</b></span><a class="res-dl" href="downloads/resources/courseware/01-百寿岩与永福寿文化.pptx" download>下载 ↓</a></div></div>
         <div class="res-card" data-type="task"><div class="res-top"><div class="res-icon t-task">📋</div><span class="res-type">教研资料</span></div><div class="res-title">永宁州古城探究学习任务单</div><div class="res-desc">以永宁州古城为情境，设计小组合作探究任务，引导学生"做中学"。</div><div class="res-foot"><span class="res-meta">八年级 · <b>小组合作</b></span><a class="res-dl" href="downloads/resources/materials/01-永宁州古城探究任务单.docx" download>下载 ↓</a></div></div>
         <div class="res-card" data-type="material"><div class="res-top"><div class="res-icon t-material">📕</div><span class="res-type">电子课本</span></div><div class="res-title">初中历史电子课本（七年级上册）</div><div class="res-desc">部编版初中历史七年级上册电子课本，方便教师备课参考与学生预习复习使用。</div><div class="res-foot"><span class="res-meta">七年级 · <b>PDF版</b></span><a class="res-dl" href="downloads/resources/textbooks/01-历史七年级上册.pdf" download>下载 ↓</a></div></div>
+
+        <!-- 电子课本专区 -->
+        <div class="res-card" data-type="material" style="grid-column:1/-1;padding:0;overflow:hidden">
+          <div style="padding:16px 18px 6px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="font-size:16px">📚</span><span style="font-size:14px;font-weight:600;color:var(--ink)">初中历史电子课本（2024版）</span></div><p style="font-size:12px;color:var(--muted);margin:0">点击封面可在线查看（国家中小学智慧教育平台），也可通过百度网盘下载PDF原件。</p></div>
+          <div class="tb-grid" style="padding:10px 18px 18px">
+            <div class="tb-card">
+              <a class="tb-cover" href="https://basic.smartedu.cn/tchMaterial/detail?contentType=assets_document&contentId=8fc851b4-28df-4eaa-8e55-08d63dc1fe38&catalogType=tchMaterial&subCatalog=tchMaterial" target="_blank" rel="noopener"><img src="images/textbooks/grade7-1.png" alt="七年级上册" loading="lazy"><div class="tb-cover-overlay"><span>📖 点击在线查看</span></div></a>
+              <div class="tb-info"><div class="tb-title">中国历史 七年级上册</div><div class="tb-edition">人教版 · 2024秋版</div><div class="tb-actions"><a class="tb-btn tb-btn-view" href="https://basic.smartedu.cn/tchMaterial/detail?contentType=assets_document&contentId=8fc851b4-28df-4eaa-8e55-08d63dc1fe38&catalogType=tchMaterial&subCatalog=tchMaterial" target="_blank" rel="noopener">在线查看</a><a class="tb-btn tb-btn-dl" href="https://pan.baidu.com/s/1WeMzBAVlqPJZuGqyQoTVqg?pwd=zusp" target="_blank" rel="noopener">网盘下载</a></div><div class="tb-pwd">提取码: zusp</div></div>
+            </div>
+            <div class="tb-card">
+              <a class="tb-cover" href="https://basic.smartedu.cn/tchMaterial/detail?contentType=assets_document&contentId=d5b610a4-f7ff-4212-9749-6bebac05ee0f&catalogType=tchMaterial&subCatalog=tchMaterial" target="_blank" rel="noopener"><img src="images/textbooks/grade7-2.png" alt="七年级下册" loading="lazy"><div class="tb-cover-overlay"><span>📖 点击在线查看</span></div></a>
+              <div class="tb-info"><div class="tb-title">中国历史 七年级下册</div><div class="tb-edition">人教版 · 2024版</div><div class="tb-actions"><a class="tb-btn tb-btn-view" href="https://basic.smartedu.cn/tchMaterial/detail?contentType=assets_document&contentId=d5b610a4-f7ff-4212-9749-6bebac05ee0f&catalogType=tchMaterial&subCatalog=tchMaterial" target="_blank" rel="noopener">在线查看</a><a class="tb-btn tb-btn-dl" href="https://pan.baidu.com/s/1VcDTKT0Putds6dgzGYdMiw?pwd=fn4m" target="_blank" rel="noopener">网盘下载</a></div><div class="tb-pwd">提取码: fn4m</div></div>
+            </div>
+            <div class="tb-card">
+              <a class="tb-cover" href="https://book.pep.com.cn/1337001201171/mobile/index.html" target="_blank" rel="noopener"><img src="images/textbooks/grade8-1.png" alt="八年级上册" loading="lazy"><div class="tb-cover-overlay"><span>📖 点击在线查看</span></div></a>
+              <div class="tb-info"><div class="tb-title">中国历史 八年级上册</div><div class="tb-edition">人教版 · 2024版</div><div class="tb-actions"><a class="tb-btn tb-btn-view" href="https://book.pep.com.cn/1337001201171/mobile/index.html" target="_blank" rel="noopener">在线查看</a><a class="tb-btn tb-btn-dl" href="https://pan.baidu.com/s/1PYGm1sLkmOtPwlSCkC8UVg?pwd=aw9h" target="_blank" rel="noopener">网盘下载</a></div><div class="tb-pwd">提取码: aw9h</div></div>
+            </div>
+            <div class="tb-card">
+              <a class="tb-cover" href="https://book.pep.com.cn/1337001202171/mobile/index.html" target="_blank" rel="noopener"><img src="images/textbooks/grade8-2.png" alt="八年级下册" loading="lazy"><div class="tb-cover-overlay"><span>📖 点击在线查看</span></div></a>
+              <div class="tb-info"><div class="tb-title">中国历史 八年级下册</div><div class="tb-edition">人教版 · 2024版</div><div class="tb-actions"><a class="tb-btn tb-btn-view" href="https://book.pep.com.cn/1337001202171/mobile/index.html" target="_blank" rel="noopener">在线查看</a><a class="tb-btn tb-btn-dl" href="https://pan.baidu.com/s/1G3FpkwUXM5ctxn_pFPCYgg?pwd=rwkx" target="_blank" rel="noopener">网盘下载</a></div><div class="tb-pwd">提取码: rwkx</div></div>
+            </div>
+            <div class="tb-card">
+              <a class="tb-cover" href="https://basic.smartedu.cn/tchMaterial/detail?contentType=assets_document&contentId=61a4f9ac-8bc0-437b-bbc2-f2f86d0ae65c&catalogType=tchMaterial&subCatalog=tchMaterial" target="_blank" rel="noopener"><img src="images/textbooks/grade9-1.png" alt="九年级上册" loading="lazy"><div class="tb-cover-overlay"><span>📖 点击在线查看</span></div></a>
+              <div class="tb-info"><div class="tb-title">世界历史 九年级上册</div><div class="tb-edition">统编版 · 高清教材</div><div class="tb-actions"><a class="tb-btn tb-btn-view" href="https://basic.smartedu.cn/tchMaterial/detail?contentType=assets_document&contentId=61a4f9ac-8bc0-437b-bbc2-f2f86d0ae65c&catalogType=tchMaterial&subCatalog=tchMaterial" target="_blank" rel="noopener">在线查看</a><a class="tb-btn tb-btn-dl" href="https://pan.baidu.com/s/1QF3W9cWdh7jkOGDVSvUMKg?pwd=f6em" target="_blank" rel="noopener">网盘下载</a></div><div class="tb-pwd">提取码: f6em</div></div>
+            </div>
+            <div class="tb-card">
+              <a class="tb-cover" href="https://basic.smartedu.cn/tchMaterial/detail?contentType=assets_document&contentId=b21d337a-5bd5-4753-a515-013eb789656c&catalogType=tchMaterial&subCatalog=tchMaterial" target="_blank" rel="noopener"><img src="images/textbooks/grade9-2.png" alt="九年级下册" loading="lazy"><div class="tb-cover-overlay"><span>📖 点击在线查看</span></div></a>
+              <div class="tb-info"><div class="tb-title">世界历史 九年级下册</div><div class="tb-edition">统编版 · 高清教材</div><div class="tb-actions"><a class="tb-btn tb-btn-view" href="https://basic.smartedu.cn/tchMaterial/detail?contentType=assets_document&contentId=b21d337a-5bd5-4753-a515-013eb789656c&catalogType=tchMaterial&subCatalog=tchMaterial" target="_blank" rel="noopener">在线查看</a><a class="tb-btn tb-btn-dl" href="https://pan.baidu.com/s/1CqOXSybc-FYBrca-iY5VMA?pwd=j983" target="_blank" rel="noopener">网盘下载</a></div><div class="tb-pwd">提取码: j983</div></div>
+            </div>
+          </div>
+        </div>
         <div class="res-card" data-type="design"><div class="res-top"><div class="res-icon t-design">📝</div><span class="res-type">教学设计</span></div><div class="res-title">《永福往事》单元主题教学设计</div><div class="res-desc">以永福地方史为线索的跨课时主题设计，体现乡土资源与大单元教学融合。</div><div class="res-foot"><span class="res-meta">九年级 · <b>3课时</b></span><a class="res-dl" href="downloads/resources/design/02-永福往事单元主题-教学设计.docx" download>下载 ↓</a></div></div>
         <div class="res-card" data-type="courseware"><div class="res-top"><div class="res-icon t-courseware">📊</div><span class="res-type">课件</span></div><div class="res-title">"学为中心"课堂模式概览课件</div><div class="res-desc">面向教师培训，系统介绍"学为中心"历史课堂的操作要素与实施策略。</div><div class="res-foot"><span class="res-meta">教师培训 · <b>36页</b></span><a class="res-dl" href="downloads/resources/courseware/02-学为中心课堂模式.pptx" download>下载 ↓</a></div></div>
         <div class="res-card" data-type="exam"><div class="res-top"><div class="res-icon t-exam">📝</div><span class="res-type">各类试卷</span></div><div class="res-title">永福县初中历史期中质量检测卷</div><div class="res-desc">立足永福乡土史料，融合"学为中心"理念，注重考查学生的历史思维与家国情怀素养。</div><div class="res-foot"><span class="res-meta">七年级 · <b>Word版</b></span><a class="res-dl" href="downloads/resources/exams/01-七年级期中检测卷.docx" download>下载 ↓</a></div></div>
